@@ -1,0 +1,34 @@
+Il s’agit de la page d’accueil par défaut utilisée pour tester le fonctionnement correct du serveur Apache2 après l’installation sur les systèmes Debian. Si vous pouvez lire cette page, cela signifie que le serveur APACHE HTTP installé sur ce site fonctionne correctement. Vous devez remplacer ce fichier (situé à /var/www/html/index.html) avant de continuer à utiliser votre serveur HTTP.
+
+Si vous êtes un utilisateur normal de ce site Web et ne savez pas ce que cette page est d’environ, cela signifie probablement que le site est actuellement indisponible en raison de la maintenance. Si le problème persiste, veuillez contacter l’administrateur du site.
+
+Vue d’ensemble de la configuration
+La configuration par défaut Apache2 de Debian est différente de la configuration par défaut en amont et divisée en plusieurs fichiers optimisés pour l’interaction avec les outils Debian. Le système de configuration est entièrement documenté dans /usr/share/doc/apache2/README. Debian.gz. Reportez-vous à cette documentation complète. La documentation pour le serveur Web lui-même peut être trouvée en accédant au manuel si le package apache2-doc a été installé sur ce serveur.
+
+La disposition de configuration d’une installation de serveur Web Apache2 sur les systèmes Debian est la suivante :
+
+/etc/apache2/
+|---apache2.conf
+| '--ports.conf
+|-- mods activé
+| |-- *.charger
+| '----conf
+|-- conf-enabled
+| '----conf
+|-- sites activés
+| '----conf
+
+apache2.conf est le fichier de configuration principal. Il met les pièces ensemble en incluant tous les fichiers de configuration restants lors du démarrage du serveur Web.
+ports.conf est toujours inclus dans le fichier de configuration principal. Il est utilisé pour déterminer les ports d’écoute des connexions entrantes, et ce fichier peut être personnalisé à tout moment.
+Les fichiers de configuration des répertoires mods/compatibles conf/et sites contiennent des extraits de configuration particuliers qui gèrent des modules, des fragments de configuration globale ou des configurations d’hôtes virtuels, respectivement.
+Ils sont activés en symconnectant les fichiers de configuration disponibles à partir de leurs homologues *disponibles/respectifs. Ceux-ci devraient être gérés en utilisant nos aides a2enmod, a2dismod, a2ensite, a2dissite, et a2enconf, a2disconf . Voir leurs pages d’homme respectives pour des informations détaillées.
+Le binaire est appelé apache2. En raison de l’utilisation de variables d’environnement, dans la configuration par défaut, apache2 doit être démarré/arrêté avec /etc/init.d/apache2 ou apache2ctl. L’appel /usr/bin/apache2 ne fonctionnera pas directement avec la configuration par défaut.
+Racines du document
+Par défaut, Debian n’autorise pas l’accès par le navigateur Web à n’importe quel fichier en dehors de ceux situés dans /var/www, public_html répertoires (lorsqu’il est activé) et /usr/share (pour les applications Web). Si votre site utilise une racine de document Web située ailleurs (par exemple dans /srv), vous devrez peut-être whitelist votre répertoire racine de document dans /etc/apache2/apache2.conf.
+
+La racine de document Debian par défaut est /var/www/html. Vous pouvez faire vos propres hôtes virtuels sous /var/www. Ceci est différent des versions précédentes qui offre une meilleure sécurité hors de la boîte.
+
+Problèmes de déclaration
+S’il vous plaît utiliser l’outil reportbug pour signaler les bogues dans le package Apache2 avec Debian. Toutefois, vérifiez les rapports de bogues existants avant de signaler un nouveau bogue.
+
+Veuillez signaler les bogues spécifiques aux modules (tels que PHP et autres) aux packages respectifs, et non au serveur Web lui-même.

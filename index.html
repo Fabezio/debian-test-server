@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>Page d'accueil Serveur Debian</title>
+  </head>
+  <body>
+    <div class="main_page">
+      <ul class="nav justify-content-center sticky-top mb-5" id="top">
+        <li class="nav-item"><a class="nav-link active" href="#about">A propos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#changes">Changements</a></li>
+        <li class="nav-item"><a class="nav-link" href="#docroot">Documentation</a></li>
+        <li class="nav-item"><a class="nav-link" href="#bugs">Problèmes</a></li>
+      </ul>
+      <div class="page_header floating_element container mb-4 mt-5"><img class="floating_element" src="./openlogo-75.png" alt="Debian Logo">
+        <h1 class="float-right">Apache2 Debian, Page Principale</h1>
+      </div>
+      <div class="content_section floating_element container">
+        <div class="section_header_red alert alert-primary my-4">
+          <div id="about"></div>ça marche!
+        </div>
+        <div class="content_section_text">
+          <p>
+            Il s’agit de la page d’accueil par défaut utilisée pour tester le fonctionnement correct du serveur Apache2 après l’installation sur les systèmes Debian. Si vous pouvez lire cette page, cela signifie que le serveur APACHE HTTP installé sur ce site fonctionne
+            correctement. Vous devez <b>remplacer ce fichier </b> (chemin:
+            <tt>/var/www/html/index.html</tt>) avant de continuer à utiliser votre serveur HTTP.
+          </p>
+          <p>
+            Si vous êtes un utilisateur normal de ce site Web et ne comprenez pas l'utilité de cette page, cela signifie probablement que le site est actuellement indisponible en raison de la maintenance. Si le problème persiste, veuillez contacter l’administrateur
+            du site.
+          </p>
+        </div>
+        <div class="section_header alert alert-warning my-4">
+          <div id="changes"></div>                Configuration Overview
+        </div>
+        <div class="content_section_text">
+          <p>Debian's Apache2 default configuration is different from the upstream default configuration, and split into several files optimized for interaction with Debian tools. The configuration system is<b>
+              fully documented in
+              /usr/share/doc/apache2/README.Debian.gz</b>. Refer to this for the full documentation. Documentation for the web server itself can be found by accessing the <a href="/manual">manual</a> if the 
+            <tt>apache2-doc</tt> package
+                                was installed on this server.
+          </p>
+          <p>The configuration layout for an Apache2 web server installation on Debian systems is as follows:</p><code>
+            <p>/etc/apache2/<br>                        |-- apache2.conf<br>                        |       `--  ports.conf<br>                        |-- mods-enabled<br>                        |       |-- *.load<br>                        |       `-- *.conf<br>                        |-- conf-enabled<br>                        |       `-- *.conf<br>                        |-- sites-enabled<br>                        |       `-- *.conf<br></p></code>
+          <ul>
+            <li>
+              <tt>apache2.conf</tt> is the main configuration file. It puts the pieces together by including all remaining configuration files when starting up the web server.
+            </li>
+            <li>
+              <tt>ports.conf</tt> is always included from the main configuration file. It is used to determine the listening ports for incoming connections, and this file can be customized anytime.
+            </li>
+            <li>Configuration files in the 
+              <tt>mods-enabled/</tt>,
+              <tt>conf-enabled/</tt> and 
+              <tt>sites-enabled/</tt> directories contain particular configuration snippets which manage modules, global configuration fragments, or virtual host configurations, respectively.
+            </li>
+            <li>They are activated by symlinking available configuration files from their respective *-available/ counterparts. These should be managed by using our helpers
+              <tt>
+                a2enmod,
+                a2dismod,
+              </tt>
+              <tt>
+                a2ensite,
+                a2dissite,
+              </tt> and
+              <tt>
+                a2enconf,
+                a2disconf
+              </tt>. See their respective man pages for detailed information.
+            </li>
+            <li>The binary is called apache2. Due to the use of environment variables, in the default configuration, apache2 needs to be started/stopped with 
+              <tt>/etc/init.d/apache2</tt> or 
+              <tt>apache2ctl</tt>.<b>Calling 
+                <tt>/usr/bin/apache2</tt> directly will not work</b> with the default configuration.
+            </li>
+          </ul>
+        </div>
+        <div class="section_header alert alert-primary my-4">
+          <div id="docroot"></div>                Document Roots
+        </div>
+        <div class="content_section_text my-4">
+          <p>By default, Debian does not allow access through the web browser to<em>any</em> file apart of those located in 
+            <tt>/var/www</tt>,<a href="http://httpd.apache.org/docs/2.4/mod/mod_userdir.html" rel="nofollow">public_html</a> directories (when enabled) and 
+            <tt>/usr/share</tt> (for web applications). If your site is using a web document root located elsewhere (such
+                                as in 
+            <tt>/srv</tt>) you may need to whitelist your document root directory in 
+            <tt>/etc/apache2/apache2.conf</tt>.
+          </p>
+          <p>The default Debian document root is 
+            <tt>/var/www/html</tt>. You can make your own virtual hosts under /var/www. This is different to previous releases which provides better security out of the box.
+          </p>
+        </div>
+        <div class="section_header alert alert-danger">
+          <div id="bugs"></div>                Reporting Problems
+        </div>
+        <div class="content_section_text">
+          <p>Please use the 
+            <tt>reportbug</tt> tool to report bugs in the Apache2 package with Debian. However, check <a href="http://bugs.debian.org/cgi-bin/pkgreport.cgi?ordering=normal;archive=0;src=apache2;repeatmerged=0" rel="nofollow">existing bug reports</a>                    before reporting a new bug.
+          </p>
+          <p>Please report bugs specific to modules (such as PHP and others) to respective packages, not to the web server itself.</p>
+        </div>
+      </div><a class="float-right" href="#top">retour au début</a>
+    </div>
+    <div class="validator">c'est bon?</div>
+  </body>
+</html>
