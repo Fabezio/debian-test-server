@@ -4,11 +4,11 @@ html
     meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css")
     //- link(rel='stylesheet', type='text/css', media='screen', href='./style.css')
-    title Page d'accueil Serveur Debian
+    title Page d'accueil test serveur (localhost)
   body
     .main_page
-
-      ul#top.nav.justify-content-center.sticky-top.mb-5
+      
+      ul#top.nav.justify-content-center.sticky-top.mb-5.bg-light
         li.nav-item
           a.nav-link.active(href='#about') A propos
         li.nav-item
@@ -25,7 +25,7 @@ html
       .page_header.floating_element.container.mb-4.mt-5
         img.floating_element(src='./openlogo-75.png', alt='Debian Logo')
         h1.float-right
-          | Apache2 Debian, Page Principale
+          | Page d'accueil test serveur (localhost)
 
       .content_section.floating_element.container
         .section_header_red.alert.alert-primary.my-4
@@ -46,6 +46,8 @@ html
           #changes
           |                 Configuration Overview
         .content_section_text
+          p apache2.conf est le fichier de configuration principal. Il met les pièces ensemble en incluant tous les fichiers de configuration restants lors du démarrage du serveur Web.
+            | ports.conf est toujours inclus dans le fichier de configuration principal. Il est utilisé pour déterminer les ports d’écoute des connexions entrantes, et ce fichier peut être personnalisé à tout moment.
           p
             | Debian's Apache2 default configuration is different from the upstream default configuration, and split into several files optimized for interaction with Debian tools. The configuration system is
             b

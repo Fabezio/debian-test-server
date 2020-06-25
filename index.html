@@ -3,18 +3,18 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <title>Page d'accueil Serveur Debian</title>
+    <title>Page d'accueil test serveur (localhost)</title>
   </head>
   <body>
     <div class="main_page">
-      <ul class="nav justify-content-center sticky-top mb-5" id="top">
+      <ul class="nav justify-content-center sticky-top mb-5 bg-light" id="top">
         <li class="nav-item"><a class="nav-link active" href="#about">A propos</a></li>
         <li class="nav-item"><a class="nav-link" href="#changes">Changements</a></li>
         <li class="nav-item"><a class="nav-link" href="#docroot">Documentation</a></li>
         <li class="nav-item"><a class="nav-link" href="#bugs">Problèmes</a></li>
       </ul>
       <div class="page_header floating_element container mb-4 mt-5"><img class="floating_element" src="./openlogo-75.png" alt="Debian Logo">
-        <h1 class="float-right">Apache2 Debian, Page Principale</h1>
+        <h1 class="float-right">Page d'accueil test serveur (localhost)</h1>
       </div>
       <div class="content_section floating_element container">
         <div class="section_header_red alert alert-primary my-4">
@@ -35,6 +35,8 @@
           <div id="changes"></div>                Configuration Overview
         </div>
         <div class="content_section_text">
+          <p>
+            apache2.conf est le fichier de configuration principal. Il met les pièces ensemble en incluant tous les fichiers de configuration restants lors du démarrage du serveur Web.ports.conf est toujours inclus dans le fichier de configuration principal. Il est utilisé pour déterminer les ports d’écoute des connexions entrantes, et ce fichier peut être personnalisé à tout moment.</p>
           <p>Debian's Apache2 default configuration is different from the upstream default configuration, and split into several files optimized for interaction with Debian tools. The configuration system is<b>
               fully documented in
               /usr/share/doc/apache2/README.Debian.gz</b>. Refer to this for the full documentation. Documentation for the web server itself can be found by accessing the <a href="/manual">manual</a> if the 
