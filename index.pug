@@ -2,12 +2,12 @@ doctype html
 html
   head
     meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
-    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css")
-    //- link(rel='stylesheet', type='text/css', media='screen', href='./style.css')
+    //- link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css")
+    link(rel='stylesheet', type='text/css', media='screen', href='./style.css')
     title Page d'accueil test serveur (localhost)
   body
-    .main_page
-      
+    
+    nav 
       ul#top.nav.justify-content-center.sticky-top.mb-5.bg-light
         li.nav-item
           a.nav-link.active(href='#about') A propos
@@ -21,144 +21,10 @@ html
         //-   a.nav-link(href='scope') Modifs
         //- li.nav-item
         //-   a.nav-link(href='files') Config
-       
-      .page_header.floating_element.container.mb-4.mt-5
-        img.floating_element(src='./openlogo-75.png', alt='Debian Logo')
-        h1.float-right
-          | Page d'accueil test serveur (localhost)
+    header   
+      h1.float-right
+        | Page d'accueil test serveur (localhost)
 
-      .content_section.floating_element.container
-        .section_header_red.alert.alert-primary.my-4
-          #about
-          | ça marche!
-        .content_section_text
-          p
-            | Il s’agit de la page d’accueil par défaut utilisée pour tester le fonctionnement correct du serveur Apache2 après l’installation sur les systèmes Debian. Si vous pouvez lire cette page, cela signifie que le serveur APACHE HTTP installé sur ce site fonctionne
-            | correctement. Vous devez 
-            b remplacer ce fichier 
-            |  (chemin:
-            tt /var/www/html/index.html
-            | ) avant de continuer à utiliser votre serveur HTTP.
-          p
-            | Si vous êtes un utilisateur normal de ce site Web et ne comprenez pas l'utilité de cette page, cela signifie probablement que le site est actuellement indisponible en raison de la maintenance. Si le problème persiste, veuillez contacter l’administrateur
-            | du site.
-        .section_header.alert.alert-warning.my-4
-          #changes
-          |                 Configuration Overview
-        .content_section_text
-          p apache2.conf est le fichier de configuration principal. Il met les pièces ensemble en incluant tous les fichiers de configuration restants lors du démarrage du serveur Web.
-            | ports.conf est toujours inclus dans le fichier de configuration principal. Il est utilisé pour déterminer les ports d’écoute des connexions entrantes, et ce fichier peut être personnalisé à tout moment.
-          p
-            | Debian's Apache2 default configuration is different from the upstream default configuration, and split into several files optimized for interaction with Debian tools. The configuration system is
-            b
-              | fully documented in
-              | /usr/share/doc/apache2/README.Debian.gz
-            | . Refer to this for the full documentation. Documentation for the web server itself can be found by accessing the 
-            a(href='/manual') manual
-            |  if the 
-            tt apache2-doc
-            |  package
-            |                     was installed on this server.
-          p
-            | The configuration layout for an Apache2 web server installation on Debian systems is as follows:
-          code
-            p
-              | /etc/apache2/
-              br
-              |                         |-- apache2.conf
-              br
-              |                         |       `--  ports.conf
-              br
-              |                         |-- mods-enabled
-              br
-              |                         |       |-- *.load
-              br
-              |                         |       `-- *.conf
-              br
-              |                         |-- conf-enabled
-              br
-              |                         |       `-- *.conf
-              br
-              |                         |-- sites-enabled
-              br
-              |                         |       `-- *.conf
-              br
-          ul
-            li
-              tt apache2.conf
-              |  is the main configuration file. It puts the pieces together by including all remaining configuration files when starting up the web server.
-            li
-              tt ports.conf
-              |  is always included from the main configuration file. It is used to determine the listening ports for incoming connections, and this file can be customized anytime.
-            li
-              | Configuration files in the 
-              tt mods-enabled/
-              | ,
-              tt conf-enabled/
-              |  and 
-              tt sites-enabled/
-              |  directories contain particular configuration snippets which manage modules, global configuration fragments, or virtual host configurations, respectively.
-            li
-              | They are activated by symlinking available configuration files from their respective *-available/ counterparts. These should be managed by using our helpers
-              tt
-                | a2enmod,
-                | a2dismod,
-              tt
-                | a2ensite,
-                | a2dissite,
-              |  and
-              tt
-                | a2enconf,
-                | a2disconf
-              | . See their respective man pages for detailed information.
-            li
-              | The binary is called apache2. Due to the use of environment variables, in the default configuration, apache2 needs to be started/stopped with 
-              tt /etc/init.d/apache2
-              |  or 
-              tt apache2ctl
-              | .
-              b
-                | Calling 
-                tt /usr/bin/apache2
-                |  directly will not work
-              |  with the default configuration.
-        .section_header.alert.alert-primary.my-4
-          #docroot
-          |                 Document Roots
-        .content_section_text.my-4
-          p
-            | By default, Debian does not allow access through the web browser to
-            em any
-            |  file apart of those located in 
-            tt /var/www
-            | ,
-            a(href='http://httpd.apache.org/docs/2.4/mod/mod_userdir.html', rel='nofollow') public_html
-            |  directories (when enabled) and 
-            tt /usr/share
-            |  (for web applications). If your site is using a web document root located elsewhere (such
-            |                     as in 
-            tt /srv
-            | ) you may need to whitelist your document root directory in 
-            tt /etc/apache2/apache2.conf
-            | .
-          p
-            | The default Debian document root is 
-            tt /var/www/html
-            | . You can make your own virtual hosts under /var/www. This is different to previous releases which provides better security out of the box.
-        .section_header.alert.alert-danger
-          #bugs
-          |                 Reporting Problems
-        .content_section_text
-          p
-            | Please use the 
-            tt reportbug
-            |  tool to report bugs in the Apache2 package with Debian. However, check 
-            a(href='http://bugs.debian.org/cgi-bin/pkgreport.cgi?ordering=normal;archive=0;src=apache2;repeatmerged=0', rel='nofollow') existing bug reports
-            |                     before reporting a new bug.
-          p
-            | Please report bugs specific to modules (such as PHP and others) to respective packages, not to the web server itself.
-      
-      a.float-right(href='#top') retour au début
-    
-    .validator
-      | c'est bon?
+    section
+      div.card
+        p ben c'est un test
