@@ -19,11 +19,14 @@ html {
 .card {
     max-width: 200px;
     height: 250px;
-    background: rgba(0,0,0,0.15);
     padding: 1rem;
     margin: 1rem;
     border-radius: 7px;
 }
+.glass{
+    background: rgba(0,0,0,0.15);
+
+} 
 
 
 p {
@@ -32,7 +35,7 @@ p {
 }
 
 nav {
-    background: rgba(0,0,0,0.15);
+    /* background: rgba(0,0,0,0.15); */
     margin-bottom: 3rem;
     padding: 1rem;
     
@@ -51,5 +54,18 @@ nav a {
     color: whitesmoke;
     text-decoration: none;
 
+}
+
+footer {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    margin: auto;
+}
+footer span {
+    margin: 0 0.33rem;
 }
 
