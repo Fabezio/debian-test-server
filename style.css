@@ -6,7 +6,7 @@
 body,
 html {
     padding: 0;
-    background-image: url("./img/Mojave\ Night.jpg");
+    background-image: url("./img/debian10.jpg");
     background-size: cover;
     /* backgro */
     font-family: Verdana, sans-serif;
@@ -16,18 +16,10 @@ html {
     text-shadow: 1px 1px rgba(0,0,0,0.65)
 }
 
-.card {
-    max-width: 200px;
-    height: 250px;
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 7px;
+
+header {
+    margin: 4rem;
 }
-.glass{
-    background: rgba(0,0,0,0.15);
-
-} 
-
 
 p {
     /* color: white; */
@@ -38,7 +30,6 @@ nav {
     /* background: rgba(0,0,0,0.15); */
     margin-bottom: 3rem;
     padding: 1rem;
-    
 }
 
 nav ul {
@@ -53,8 +44,8 @@ nav li {
 nav a {
     color: whitesmoke;
     text-decoration: none;
-
 }
+
 
 footer {
     display: block;
@@ -69,3 +60,40 @@ footer span {
     margin: 0 0.33rem;
 }
 
+.glass{
+    background: rgba(0,0,0,0.15);
+} 
+
+.card {
+    max-width: 200px;
+    height: 250px;
+    padding: 0.25rem 0;
+    margin: 1rem;
+}
+
+.card p {
+    font-weight: 100;
+    padding: 0.5rem 0.25rem;
+
+}
+.card p:hover {
+    background: rgba(0,0,0,0.05);
+    color: #ddd;
+    border-top: 1px inset rgba(0,0,0,0.1);
+    border-bottom: 1px outset rgba(0,0,0,0.1);
+}
+.card p:hover span {
+    color: #0ee;
+}
+
+.border {
+    border-radius: 10px;
+    border: 2px outset rgba(0,0,0,0.05);
+} 
+
+.on {
+    color: #0dd;
+}
+.off {
+    color: pink;
+}
