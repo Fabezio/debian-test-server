@@ -12,16 +12,25 @@
 	let images = [
 		'debian10.jpg',
 		'debian10_2.jpg',
-		'debian10_3.jpg'
+		'debian10_3.jpg',
+		'1920x1080.png',
+		'bash_oblique.jpg'
+
 		// 'debian10_grey.jpg',
 	]
 	let rndImg = Math.floor(Math.random() * images.length)
+
+	function checkStatus() {
+		// if (!root) {
+		// 	user = normal
+		// }
+	}
 	$: console.log(images.length, rndImg)
 	$: if(!root) user = 'normal'
 	$: {if(!isOK) 
 				isOn = false 
-			else if (isOn == true) 
-				isOK = true}
+			else
+				isOn = true}
 
 
 </script>
@@ -41,7 +50,7 @@
 		<Card >
 			<p >user:  <span class="on">{user}</span></p>
 			<p on:click={() => root = !root}>privileges:  <span class={ root ? "on" : "off"}>{root ? 'root' : 'normal'}</span></p>
-			<p on:click={() => isOK = !isOK}>test: <span class={ isOK ? "on" : "off"}>{isOK ? 'OK' : 'Failed'}</span></p>
+			<p on:click={() => isOK = !isOK}>test: <span class={ isOK ? "on" : "off"}>{isOK ? 'OK' : 'failed'}</span></p>
 			<p on:click={() => isOn = !isOn}>status: <span class={ isOn ? "on" : "off"}>{isOn? "on" : "off"}</span></p>
 			<!-- <div class="glass border">
 			</div> -->

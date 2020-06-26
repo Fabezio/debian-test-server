@@ -22,7 +22,7 @@
     margin: auto;
   }
   footer span {
-    margin: 0 0.33rem;
+    margin: 0 0.25rem;
   }
 
 </style>
