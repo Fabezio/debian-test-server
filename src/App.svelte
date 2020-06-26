@@ -11,9 +11,6 @@
 	let isOn = true
 	let alerts
 	let images = [
-		'debian10.jpg',
-		'debian10_2.jpg',
-		'debian10_3.jpg',
 		'1920x1080.png',
 		'Abstract Shapes 2.jpg',
 		'Abstract Shapes.jpg',
@@ -28,8 +25,16 @@
 
 		// 'debian10_grey.jpg',
 	]
-	let sudoImg = 'debian10.jpg'
+	let sudoImg = [
+		'debian10.jpg',
+		// 'debian10.jpg',
+		'debian10_2.jpg',
+		'debian10_3.jpg',
+		'bash_oblique.jpg'
+
+	]
 	let rndImg = Math.floor(Math.random() * images.length)
+	let rndRootImg = Math.floor(Math.random() * sudoImg.length)
 	let dispModal = false
 
 	function checkStatus() {
@@ -60,7 +65,7 @@
 <svelte:head>{name}</svelte:head>
 
 <main
- style="background-image: url('./build/img/{root? sudoImg : images[rndImg]}'" 
+ style="background-image: url('./build/img/{root? sudoImg[rndRootImg] : images[rndImg]}'" 
  >
 	<Navbar mode="glass border" />
 	<!-- <Glass>
