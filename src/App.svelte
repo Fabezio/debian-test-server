@@ -1,32 +1,56 @@
 <script>
+	import Glass from './UI/Glass.svelte'
+	import Navbar from './Layouts/Navbar.svelte'
+	import Footer from './Layouts/Footer.svelte'
 	import Card from './UI/Card.svelte'
 	export let name;
+	let user = 'admin'
+	let root = true
+	// let test = 'ok'
+	let isOK = true
+	let isOn = true
+	$: if(!root) user = 'normal'
+	$: {if(!isOK) 
+				isOn = false 
+			else if (isOn == true) 
+				isOK = true}
+
+
 </script>
 
+<svelte:head>{name}</svelte:head>
+
 <main>
-	<nav class="glass">
-		<ul class="nav justify-content-center sticky-top mb-5 bg-light" id="top">
-			<li class="nav-item"><a class="nav-link active" href="#about">A propos</a></li>
-			<li class="nav-item"><a class="nav-link" href="#changes">Changements</a></li>
-			<li class="nav-item"><a class="nav-link" href="#docroot">Documentation</a></li>
-			<li class="nav-item"><a class="nav-link" href="#bugs">Problèmes</a></li>
-		</ul>
-	</nav>
+	<Glass>
+		<Navbar />
+	</Glass>
 	<header>  
 		<h1 class="float-right">{name}</h1>
 	</header>
 	<section >
 		<Card >
-			<div class="glass border">
-				<p>user:  <span class="on">admin</span></p>
-				<p>privileges:  <span class="on">root</span></p>
-				<p>test: <span class="on">ok</span></p>
-				<p>status: <span class="off">off</span></p>
-			</div>
+			<p >user:  <span class="on">{user}</span></p>
+			<p on:click={() => root = !root}>privileges:  <span class={ root ? "on" : "off"}>{root ? 'root' : 'normal'}</span></p>
+			<p on:click={() => isOK = !isOK}>test: <span class={ isOK ? "on" : "off"}>{isOK ? 'OK' : 'Failed'}</span></p>
+			<p on:click={() => isOn = !isOn}>status: <span class={ isOn ? "on" : "off"}>{isOn? "on" : "off"}</span></p>
+			<!-- <div class="glass border">
+			</div> -->
 		</Card>
-		
+		<div class="">
+		{#if root}
+			<Card >
+				<h3>
+				dashboard
+				</h3>
+			</Card>
+			 <!-- content here -->
+		{/if}
+		</div>
+	
 	</section>
-	<footer class="glass"><span>debian server</span><span>&copy;</span><span>2020</span></footer>
+	<Glass>
+		<Footer />
+	</Glass>	
 </main>
 
 <style>
@@ -46,84 +70,44 @@
 		font-size: 1rem;
 		text-align: center;
 		color: whitesmoke;
-		text-shadow: 1px 1px rgba(0,0,0,0.65)
+		text-shadow: .5px .5px rgba(0,0,0,0.65)
 	}
 
 	header {
 		margin: 4rem;
+		clear: both;
 	}
 
 	p {
 		/* color: white; */
 		text-align: justify;
 	}
-
-	nav {
-			/* background: rgba(0,0,0,0.15); */
-			margin-bottom: 3rem;
-			padding: 1rem;
-	}
-
-	nav ul {
-			display: flex;
-			justify-content: space-evenly;
-	}
-
-	nav li {
-			list-style: none;;
-	}
-
-	nav a {
-			color: whitesmoke;
-			text-decoration: none;
-	}
-
-
-	footer {
-			display: block;
-			width: 100%;
-			text-align: center;
-			padding: 1rem;
-			position: fixed;
-			bottom: 0;
-			margin: auto;
-	}
-	footer span {
-			margin: 0 0.33rem;
-	}
-
-	.glass{
-			background: rgba(0,0,0,0.15);
-	} 
-	.glass p {
+	
+	section p {
 			font-weight: 100;
 			margin: 0.25rem 0.5rem;
 			padding: 0.2rem 0.5rem;
 
 	}
-	.glass p:hover {
+	section p:hover {
 		cursor: pointer;
 		/* background: rgba(0,0,0,0.05); */
 		color: #ddd;
 		/* border-top: 1px inset rgba(0,0,0,0.1); */
 		/* border-bottom: 1px outset rgba(0,0,0,0.1); */
 	}
-	.glass p:hover span {
+	section p:hover span {
 			color: #0ee;
 	}
-
-	
-
-	.border {
-			border-radius: 10px;
-			border: 2px outset rgba(0,0,0,0.05);
-	} 
 
 	.on {
 			color: #0dd;
 	}
 	.off {
 			color: pink;
+	}
+	.float-right {
+		float: right;
 	}
 
 </style>

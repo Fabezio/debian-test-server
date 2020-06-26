@@ -1,5 +1,12 @@
-<div class="card">
-  <slot></slot>
+<script>
+	import Glass from './Glass.svelte'
+	// let border = "border"
+</script>
+
+<div class="card glass border">
+	<Glass border="border">
+	  <slot />
+	</Glass>
 
 </div>
 
@@ -7,7 +14,7 @@
  .card {
 			max-width: 200px;
 			height: 250px;
-			padding: 0.25rem 0;
+			padding: 0.25rem;
 			margin: 1rem;
 	}
 
