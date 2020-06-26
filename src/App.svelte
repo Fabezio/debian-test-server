@@ -12,11 +12,11 @@
 	let images = [
 		'debian10.jpg',
 		'debian10_2.jpg',
-		'debian10_3.jpg',
-		'debian10_grey.jpg',
+		'debian10_3.jpg'
+		// 'debian10_grey.jpg',
 	]
 	let rndImg = Math.floor(Math.random() * images.length)
-	$: console.log(images.length)
+	$: console.log(images.length, rndImg)
 	$: if(!root) user = 'normal'
 	$: {if(!isOK) 
 				isOn = false 
@@ -28,12 +28,14 @@
 
 <svelte:head>{name}</svelte:head>
 
-<main>
+<main
+ style="background-image: url('./build/img/{images[rndImg]}')"
+ >
 	<Glass>
 		<Navbar />
 	</Glass>
 	<header>  
-		<h1 class="float-right">{name}</h1>
+		<h1 class="">{name}</h1>
 	</header>
 	<section >
 		<Card >
@@ -71,7 +73,7 @@
 		margin: 0;
 		height: 100vh;
 		width: 100%;
-		background-image: url("./img/debian10_3.jpg");
+		/* background-image: url("./build/img/{images[rndImg]}"); */
 		background-size: cover;
 		/* backgro */
 		font-family: Verdana, sans-serif;
