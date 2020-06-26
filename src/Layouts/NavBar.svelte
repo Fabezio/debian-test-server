@@ -1,8 +1,9 @@
 <script>
+	export let mode
   // import Glass from '../UI/Glass.svelte'
 </script>
 
-<nav>
+<nav class="glass">
   <ul class="nav justify-content-center sticky-top mb-5 bg-light" id="top">
 		<li class="nav-item"><a class="nav-link active" href="#about">A propos</a></li>
 		<li class="nav-item"><a class="nav-link" href="#changes">Changements</a></li>
@@ -16,7 +17,7 @@
 	nav {
 			/* background: rgba(0,0,0,0.15); */
 			margin-bottom: 3rem;
-			padding: 1rem;
+			padding: 0.5rem;
 	}
 
 	nav ul {
@@ -31,5 +32,8 @@
 	nav a {
 			color: whitesmoke;
 			text-decoration: none;
+	}
+	.glass{
+			background: rgba(0,0,0,0.15);
 	}
 </style>

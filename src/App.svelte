@@ -3,11 +3,10 @@
 	import Navbar from './Layouts/Navbar.svelte'
 	import Footer from './Layouts/Footer.svelte'
 	import Card from './UI/Card.svelte'
+	import Modal from './UI/Modal.svelte'
 	export let name;
 	let user = 'fabezio'
-	// let adminUser = user + ' (admin)'
 	let root = true
-	// let test = 'ok'
 	let isOK = true
 	let isOn = true
 	let alerts
@@ -29,13 +28,20 @@
 
 		// 'debian10_grey.jpg',
 	]
-	let sudoImg = 'bash_oblique.jpg'
+	let sudoImg = 'debian10.jpg'
 	let rndImg = Math.floor(Math.random() * images.length)
+	let dispModal = false
 
 	function checkStatus() {
 		// if (!root) {
 		// 	user = normal
 		// }
+	}
+
+	function handleAlert() {
+		alerts = ""
+		isOK = true 
+
 	}
 	$: console.log(images.length, rndImg)
 	// $: {if(root) adminUser 
@@ -56,20 +62,20 @@
 <main
  style="background-image: url('./build/img/{root? sudoImg : images[rndImg]}'" 
  >
-	<Glass>
-		<Navbar />
-	</Glass>
+	<Navbar mode="glass border" />
+	<!-- <Glass>
+	</Glass> -->
 	<header>  
 		<h1 class="">{name}</h1>
 	</header>
 	<section >
 		<div class="group">
-		<Card >
+		<Card mode="glass">
 			<p >user:  <span class="on">{user}{root ? ' (admin)' : ''}</span></p>
 			<p on:click={() => root = !root}>privileges:  <span class={ root ? "on" : "off"}>{root ? 'root' : 'normal'}</span></p>
 			{#if alerts }
 				 <!-- content here -->
-				<div class="alert">{alerts}</div>
+				<div class="alert" on:click={handleAlert}>{alerts}</div>
 			{/if}
 			<p on:click={() => isOK = !isOK}>test: <span class={ isOK ? "on" : "off"}>{isOK ? 'OK' : 'failed'}</span></p>
 			<p on:click={() => isOn = !isOn}>status: <span class={ isOn ? "on" : "off"}>{isOn? "on" : "off"}</span></p>
@@ -78,9 +84,9 @@
 		</Card>
 	
 		{#if root}
-			<Card >
+			<Card mode="glass border">
 				<p>add user</p>
-				<p>see user info</p>
+				<p on:click={() => dispModal = true}>see user info</p>
 				<p>update user</p>
 				<p>delete user</p>
 				
@@ -89,6 +95,12 @@
 		{/if}
 	
 		</div>
+		{#if dispModal}
+			<Modal {dispModal}>
+				<button  on:click={() => dispModal = false}>close</button>
+			</Modal>
+			 <!-- content here -->
+		{/if}
 	
 	</section>
 
@@ -162,8 +174,15 @@
 		border-radius: 50%;
 		width: 1rem;
 		float:left;
-
-
+		cursor: pointer;
 	}
+
+	.glass{
+			background: rgba(0,0,0,0.15);
+	} 
+  .border {
+			border-radius: 10px;
+			border: 2px outset rgba(0,0,0,0.05);
+	} 
 
 </style>

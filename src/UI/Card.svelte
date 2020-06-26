@@ -1,12 +1,13 @@
 <script>
-	import Glass from './Glass.svelte'
-	// let border = "border"
+	// import Glass from './Glass.svelte'
+	// import './glass.css'
+	export let mode
 </script>
 
-<div class="card glass border">
-	<Glass border="border">
+<div class="card {mode} glass border">
 	  <slot />
-	</Glass>
+	<!-- <Glass border="border">
+	</Glass> -->
 
 </div>
 
@@ -17,6 +18,12 @@
 			padding: 0.25rem;
 			margin: 1rem;
 	}
-
+	.glass{
+			background: rgba(0,0,0,0.15);
+	}
+	.border {
+			border-radius: 10px;
+			border: 2px outset rgba(0,0,0,0.05);
+	} 
 	
 </style>
