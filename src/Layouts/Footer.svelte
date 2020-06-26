@@ -1,10 +1,7 @@
 <script>
-  // import Glass from "../UI/Glass.svelte";
-  export let mode
+  // 
 </script>
-
-  <!-- <Glass>
-  </Glass> -->
+  
 <footer class="glass">
   <span>debian server</span>
   <span>&copy;</span>
@@ -25,8 +22,4 @@
   footer span {
     margin: 0 0.25rem;
   }
-  .glass{
-			background: rgba(0,0,0,0.15);
-	}
-
 </style>

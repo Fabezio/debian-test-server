@@ -1,7 +1,5 @@
 <script>
-  // import {createEventDispatcher} from 'svelte'
   export let dispModal
-  // let dispatch = createEventDispatcher()
 </script>
 
 <div class="backdrop"></div>
@@ -56,13 +54,5 @@ footer {
   display: block;
   width: 100%;
 }
-/* footer button {
-  position: relative;
-  right: 2rem; 
-  float:right;
-  
-
-} */
-  
 
 </style>

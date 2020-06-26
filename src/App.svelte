@@ -1,5 +1,5 @@
 <script>
-	import Glass from './UI/Glass.svelte'
+	// import Glass from './UI/Glass.svelte'
 	import Navbar from './Layouts/Navbar.svelte'
 	import Footer from './Layouts/Footer.svelte'
 	import Card from './UI/Card.svelte'
@@ -68,8 +68,6 @@
  style="background-image: url('./build/img/{root? sudoImg[rndRootImg] : images[rndImg]}'" 
  >
 	<Navbar mode="glass border" />
-	<!-- <Glass>
-	</Glass> -->
 	<header>  
 		<h1 class="">{name}</h1>
 	</header>
@@ -78,14 +76,12 @@
 		<Card mode="glass">
 			<p >user:  <span class="on">{user}{root ? ' (admin)' : ''}</span></p>
 			<p on:click={() => root = !root}>privileges:  <span class={ root ? "on" : "off"}>{root ? 'root' : 'normal'}</span></p>
-			{#if alerts }
-				 <!-- content here -->
+			{#if alerts }				 
 				<div class="alert" on:click={handleAlert}>{alerts}</div>
 			{/if}
 			<p on:click={() => isOK = !isOK}>test: <span class={ isOK ? "on" : "off"}>{isOK ? 'OK' : 'failed'}</span></p>
 			<p on:click={() => isOn = !isOn}>status: <span class={ isOn ? "on" : "off"}>{isOn? "on" : "off"}</span></p>
-			<!-- <div class="glass border">
-			</div> -->
+			
 		</Card>
 	
 		{#if root}
@@ -96,7 +92,6 @@
 				<p>delete user</p>
 				
 			</Card>
-			 <!-- content here -->
 		{/if}
 	
 		</div>
@@ -104,29 +99,19 @@
 			<Modal {dispModal}>
 				<button  on:click={() => dispModal = false}>close</button>
 			</Modal>
-			 <!-- content here -->
-		{/if}
-	
+		{/if}	
 	</section>
 
-	<Glass>
-		<Footer />
-	</Glass>	
+	<Footer />	
 </main>
 
-<style>
-	/* * {
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
-	} */
+<style>	
 	main {
 		padding: 0;
 		margin: 0;
 		height: 100vh;
 		width: 100%;
-		/* background-image: url("./build/img/{images[rndImg]}"); */
 		background-size: cover;
-		/* backgro */
 		font-family: Verdana, sans-serif;
 		font-size: 1rem;
 		text-align: center;
@@ -140,36 +125,30 @@
 	}
 
 	p {
-		/* color: white; */
 		text-align: justify;
 	}
 	
 	section p {
-			font-weight: 100;
+		font-weight: 100;
 			margin: 0.25rem 0.5rem;
 			padding: 0.2rem 0.5rem;
 
 	}
 	section p:hover {
 		cursor: pointer;
-		/* background: rgba(0,0,0,0.05); */
 		color: #ddd;
-		/* border-top: 1px inset rgba(0,0,0,0.1); */
-		/* border-bottom: 1px outset rgba(0,0,0,0.1); */
 	}
 	section p:hover span {
-			color: #0ee;
+		color: #0ee;
 	}
 
 	.on {
-			color: #0dd;
+		color: #0dd;
 	}
 	.off {
-			color: pink;
+		color: pink;
 	}
-	.float-right {
-		float: right;
-	}
+	
 	.group {
 		display: flex;
 	}
@@ -181,13 +160,4 @@
 		float:left;
 		cursor: pointer;
 	}
-
-	.glass{
-			background: rgba(0,0,0,0.15);
-	} 
-  .border {
-			border-radius: 10px;
-			border: 2px outset rgba(0,0,0,0.05);
-	} 
-
 </style>
