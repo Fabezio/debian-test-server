@@ -4,7 +4,8 @@
 	import Footer from './Layouts/Footer.svelte'
 	import Card from './UI/Card.svelte'
 	export let name;
-	let user = 'admin'
+	let user = 'fabezio'
+	// let adminUser = user + ' (admin)'
 	let root = true
 	// let test = 'ok'
 	let isOK = true
@@ -15,7 +16,6 @@
 		'debian10_2.jpg',
 		'debian10_3.jpg',
 		'1920x1080.png',
-		'bash_oblique.jpg',
 		'Abstract Shapes 2.jpg',
 		'Abstract Shapes.jpg',
 		'Chroma 1.jpg',
@@ -29,6 +29,7 @@
 
 		// 'debian10_grey.jpg',
 	]
+	let sudoImg = 'bash_oblique.jpg'
 	let rndImg = Math.floor(Math.random() * images.length)
 
 	function checkStatus() {
@@ -37,8 +38,8 @@
 		// }
 	}
 	$: console.log(images.length, rndImg)
-	$: {if(!root) user = 'normal' 
-			else user = "admin"}
+	// $: {if(root) adminUser 
+	// 		else user }
 	$: {if(!isOK) {
 				isOn = false 
 				alerts = '!'
@@ -53,7 +54,7 @@
 <svelte:head>{name}</svelte:head>
 
 <main
- style="background-image: url('./build/img/{images[rndImg]}')"
+ style="background-image: url('./build/img/{root? sudoImg : images[rndImg]}'" 
  >
 	<Glass>
 		<Navbar />
@@ -64,7 +65,7 @@
 	<section >
 		<div class="group">
 		<Card >
-			<p >user:  <span class="on">{user}</span></p>
+			<p >user:  <span class="on">{user}{root ? ' (admin)' : ''}</span></p>
 			<p on:click={() => root = !root}>privileges:  <span class={ root ? "on" : "off"}>{root ? 'root' : 'normal'}</span></p>
 			{#if alerts }
 				 <!-- content here -->

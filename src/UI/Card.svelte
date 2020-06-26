@@ -12,7 +12,7 @@
 
 <style>
  .card {
-			max-width: 200px;
+			max-width: 300px;
 			height: 250px;
 			padding: 0.25rem;
 			margin: 1rem;
