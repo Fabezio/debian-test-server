@@ -9,12 +9,23 @@
 	// let test = 'ok'
 	let isOK = true
 	let isOn = true
+	let alerts
 	let images = [
 		'debian10.jpg',
 		'debian10_2.jpg',
 		'debian10_3.jpg',
 		'1920x1080.png',
-		'bash_oblique.jpg'
+		'bash_oblique.jpg',
+		'Abstract Shapes 2.jpg',
+		'Abstract Shapes.jpg',
+		'Chroma 1.jpg',
+		'Chroma 2.jpg',
+		'Flower 1.jpg',
+		'Flower 2.jpg',
+		'Flower 3.jpg',
+		'Flower 4.jpg',
+		'Mojave Day.jpg',
+		'Mojave Night.jpg'
 
 		// 'debian10_grey.jpg',
 	]
@@ -26,11 +37,15 @@
 		// }
 	}
 	$: console.log(images.length, rndImg)
-	$: if(!root) user = 'normal'
-	$: {if(!isOK) 
+	$: {if(!root) user = 'normal' 
+			else user = "admin"}
+	$: {if(!isOK) {
 				isOn = false 
-			else
-				isOn = true}
+				alerts = '!'
+			}else{
+				isOn = true
+				alerts = null
+				}}
 
 
 </script>
@@ -47,26 +62,35 @@
 		<h1 class="">{name}</h1>
 	</header>
 	<section >
+		<div class="group">
 		<Card >
 			<p >user:  <span class="on">{user}</span></p>
 			<p on:click={() => root = !root}>privileges:  <span class={ root ? "on" : "off"}>{root ? 'root' : 'normal'}</span></p>
+			{#if alerts }
+				 <!-- content here -->
+				<div class="alert">{alerts}</div>
+			{/if}
 			<p on:click={() => isOK = !isOK}>test: <span class={ isOK ? "on" : "off"}>{isOK ? 'OK' : 'failed'}</span></p>
 			<p on:click={() => isOn = !isOn}>status: <span class={ isOn ? "on" : "off"}>{isOn? "on" : "off"}</span></p>
 			<!-- <div class="glass border">
 			</div> -->
 		</Card>
-		<div class="">
+	
 		{#if root}
 			<Card >
-				<h3>
-				dashboard
-				</h3>
+				<p>add user</p>
+				<p>see user info</p>
+				<p>update user</p>
+				<p>delete user</p>
+				
 			</Card>
 			 <!-- content here -->
 		{/if}
+	
 		</div>
 	
 	</section>
+
 	<Glass>
 		<Footer />
 	</Glass>	
@@ -89,7 +113,7 @@
 		font-size: 1rem;
 		text-align: center;
 		color: whitesmoke;
-		text-shadow: .5px .5px rgba(0,0,0,0.65)
+		text-shadow: 1px 1px 1px rgba(0,0,0,0.95)
 	}
 
 	header {
@@ -127,6 +151,18 @@
 	}
 	.float-right {
 		float: right;
+	}
+	.group {
+		display: flex;
+	}
+	.alert {
+		font-size: 0.75rem;
+		background: rgba(255,0,0, 0.75);
+		border-radius: 50%;
+		width: 1rem;
+		float:left;
+
+
 	}
 
 </style>
