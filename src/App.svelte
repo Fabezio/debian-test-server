@@ -9,6 +9,14 @@
 	// let test = 'ok'
 	let isOK = true
 	let isOn = true
+	let images = [
+		'debian10.jpg',
+		'debian10_2.jpg',
+		'debian10_3.jpg',
+		'debian10_grey.jpg',
+	]
+	let rndImg = Math.floor(Math.random() * images.length)
+	$: console.log(images.length)
 	$: if(!root) user = 'normal'
 	$: {if(!isOK) 
 				isOn = false 
