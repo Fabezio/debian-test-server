@@ -1,5 +1,6 @@
 <script>
 	// import Glass from './UI/Glass.svelte'
+	import { users } from './DebianServer/users-store'
 	import Navbar from './Layouts/Navbar.svelte'
 	import Footer from './Layouts/Footer.svelte'
 	import Card from './UI/Card.svelte'
@@ -35,7 +36,7 @@
 	]
 	let rndImg = Math.floor(Math.random() * images.length)
 	let rndRootImg = Math.floor(Math.random() * sudoImg.length)
-	let dispModal = false
+	let dispModal = true
 
 	function checkStatus() {
 		// if (!root) {
@@ -48,7 +49,7 @@
 		isOK = true 
 
 	}
-	$: console.log(images.length, rndImg)
+	// $: console.log(images.length, rndImg)
 	// $: {if(root) adminUser 
 	// 		else user }
 	$: {if(!isOK) {
@@ -57,7 +58,9 @@
 			}else{
 				isOn = true
 				alerts = null
-				}}
+			}}
+
+	$: console.log($users)
 
 
 </script>
@@ -65,39 +68,56 @@
 <svelte:head>{name}</svelte:head>
 
 <main
- style="background-image: url('./build/img/{root? sudoImg[rndRootImg] : images[rndImg]}'" 
+ style="background-image: url('./img/{root? sudoImg[rndRootImg] : images[rndImg]}'" 
  >
-	<Navbar mode="glass border" />
+	<Navbar />
 	<header>  
 		<h1 class="">{name}</h1>
 	</header>
 	<section >
 		<div class="group">
-		<Card mode="glass">
-			<p >user:  <span class="on">{user}{root ? ' (admin)' : ''}</span></p>
-			<p on:click={() => root = !root}>privileges:  <span class={ root ? "on" : "off"}>{root ? 'root' : 'normal'}</span></p>
-			{#if alerts }				 
-				<div class="alert" on:click={handleAlert}>{alerts}</div>
-			{/if}
-			<p on:click={() => isOK = !isOK}>test: <span class={ isOK ? "on" : "off"}>{isOK ? 'OK' : 'failed'}</span></p>
-			<p on:click={() => isOn = !isOn}>status: <span class={ isOn ? "on" : "off"}>{isOn? "on" : "off"}</span></p>
-			
-		</Card>
-	
-		{#if root}
-			<Card mode="glass border">
-				<p>add user</p>
-				<p on:click={() => dispModal = true}>see user info</p>
-				<p>update user</p>
-				<p>delete user</p>
+			<Card>
+				<p >user:  <span class="on">{user}{root ? ' (admin)' : ''}</span></p>
+				<p on:click={() => root = !root}>privileges:  <span class={ root ? "on" : "off"}>{root ? 'root' : 'normal'}</span></p>
+				{#if alerts }				 
+					<div class="alert" on:click={handleAlert}>{alerts}</div>
+				{/if}
+				<p on:click={() => isOK = !isOK}>test: <span class={ isOK ? "on" : "off"}>{isOK ? 'OK' : 'failed'}</span></p>
+				<p on:click={() => isOn = !isOn}>status: <span class={ isOn ? "on" : "off"}>{isOn? "on" : "off"}</span></p>
 				
 			</Card>
-		{/if}
-	
+		
+			{#if root}
+				<Card>
+					<p>add user</p>
+					<p on:click={() => dispModal = true}>see user info</p>
+					<p>update user</p>
+					<p>delete user</p>
+				</Card>
+			{/if}
 		</div>
+
 		{#if dispModal}
 			<Modal {dispModal}>
-				<button  on:click={() => dispModal = false}>close</button>
+				<div slot="content" id="content">
+					{#each $users as user}
+						 <!-- content here -->
+							<img src="./logos/{user.avatar}" />
+							<p>Name: {user.name}</p>	
+							<p>Group: {user.group}</p>	
+							<p>job: {user.job}</p>	
+							<p>hobbies:
+							{#each user.hobbies as hobby}
+								<br>- {hobby}
+							{/each}
+							</p>
+							<p>quotation: 
+							<q>{user.adage}</q>
+							</p>
+						 
+					{/each}
+				</div>
+				<button slot ="footer" on:click={() => dispModal = false}>close</button>
 			</Modal>
 		{/if}	
 	</section>
@@ -159,5 +179,17 @@
 		width: 1rem;
 		float:left;
 		cursor: pointer;
+	}
+	#content {
+		display: block;
+	}
+
+	img {
+		width: 200px;
+		float:left;
+	}
+	button {
+		position: absolute;
+		right: 2rem;
 	}
 </style>

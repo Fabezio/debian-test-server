@@ -1,19 +1,19 @@
 <script>
-  export let dispModal
+  // export let dispModal
 </script>
 
 <div class="backdrop"></div>
 <div class="window" >
   <header>
-    <h2>Title</h2> 
+    <h3>User info</h3> 
   </header>
   <hr>
   <body>
-  Modal status: {dispModal}
+    <slot name='content'></slot>
   </body>
   <hr>
   <footer>
-    <slot />
+    <slot name="footer" />
   </footer>
 </div>
 <style>
@@ -44,15 +44,17 @@ hr {
   opacity: 0.5;
 }
 body {
-  height: 45vh;
+  height: 40vh;
 }
 
 footer {
   position: absolute;
   bottom: 0;
+
   margin-bottom: 1rem;
   display: block;
   width: 100%;
+  height: 2rem;
 }
 
 </style>
