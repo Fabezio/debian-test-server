@@ -1,7 +1,12 @@
 .glass {
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 31, 63, 0.15);
 }
 .border {
   border-radius: 10px;
-  border: 2px outset rgba(0, 0, 0, 0.05);
+  border: 2px outset rgba(0, 31, 63, 0.05);
+}
+
+.glass *:hover {
+  filter: brightness(110%);
+  /* text-decoration: underline .5px ; */
 }
