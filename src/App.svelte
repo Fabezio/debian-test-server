@@ -129,7 +129,7 @@
 	}
 	
 	section p {
-		font-weight: 100;
+		font-weight: 300;
 			margin: 0.25rem 0.5rem;
 			padding: 0.2rem 0.5rem;
 

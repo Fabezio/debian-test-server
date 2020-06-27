@@ -906,7 +906,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			t = text(/*alerts*/ ctx[4]);
-    			attr_dev(div, "class", "alert svelte-20gv77");
+    			attr_dev(div, "class", "alert svelte-1uhglgl");
     			add_location(div, file$4, 79, 4, 1679);
     		},
     		m: function mount(target, anchor) {
@@ -997,21 +997,21 @@ var app = (function () {
     			t11 = text("status: ");
     			span3 = element("span");
     			t12 = text(t12_value);
-    			attr_dev(span0, "class", "on svelte-20gv77");
+    			attr_dev(span0, "class", "on svelte-1uhglgl");
     			add_location(span0, file$4, 76, 14, 1472);
-    			attr_dev(p0, "class", "svelte-20gv77");
+    			attr_dev(p0, "class", "svelte-1uhglgl");
     			add_location(p0, file$4, 76, 3, 1461);
-    			attr_dev(span1, "class", span1_class_value = "" + (null_to_empty(/*root*/ ctx[1] ? "on" : "off") + " svelte-20gv77"));
+    			attr_dev(span1, "class", span1_class_value = "" + (null_to_empty(/*root*/ ctx[1] ? "on" : "off") + " svelte-1uhglgl"));
     			add_location(span1, file$4, 77, 49, 1580);
-    			attr_dev(p1, "class", "svelte-20gv77");
+    			attr_dev(p1, "class", "svelte-1uhglgl");
     			add_location(p1, file$4, 77, 3, 1534);
-    			attr_dev(span2, "class", span2_class_value = "" + (null_to_empty(/*isOK*/ ctx[2] ? "on" : "off") + " svelte-20gv77"));
+    			attr_dev(span2, "class", span2_class_value = "" + (null_to_empty(/*isOK*/ ctx[2] ? "on" : "off") + " svelte-1uhglgl"));
     			add_location(span2, file$4, 81, 42, 1787);
-    			attr_dev(p2, "class", "svelte-20gv77");
+    			attr_dev(p2, "class", "svelte-1uhglgl");
     			add_location(p2, file$4, 81, 3, 1748);
-    			attr_dev(span3, "class", span3_class_value = "" + (null_to_empty(/*isOn*/ ctx[3] ? "on" : "off") + " svelte-20gv77"));
+    			attr_dev(span3, "class", span3_class_value = "" + (null_to_empty(/*isOn*/ ctx[3] ? "on" : "off") + " svelte-1uhglgl"));
     			add_location(span3, file$4, 82, 44, 1902);
-    			attr_dev(p3, "class", "svelte-20gv77");
+    			attr_dev(p3, "class", "svelte-1uhglgl");
     			add_location(p3, file$4, 82, 3, 1861);
     		},
     		m: function mount(target, anchor) {
@@ -1052,7 +1052,7 @@ var app = (function () {
     			if (dirty & /*root*/ 2 && t2_value !== (t2_value = (/*root*/ ctx[1] ? " (admin)" : "") + "")) set_data_dev(t2, t2_value);
     			if (dirty & /*root*/ 2 && t5_value !== (t5_value = (/*root*/ ctx[1] ? "root" : "normal") + "")) set_data_dev(t5, t5_value);
 
-    			if (dirty & /*root*/ 2 && span1_class_value !== (span1_class_value = "" + (null_to_empty(/*root*/ ctx[1] ? "on" : "off") + " svelte-20gv77"))) {
+    			if (dirty & /*root*/ 2 && span1_class_value !== (span1_class_value = "" + (null_to_empty(/*root*/ ctx[1] ? "on" : "off") + " svelte-1uhglgl"))) {
     				attr_dev(span1, "class", span1_class_value);
     			}
 
@@ -1071,13 +1071,13 @@ var app = (function () {
 
     			if (dirty & /*isOK*/ 4 && t9_value !== (t9_value = (/*isOK*/ ctx[2] ? "OK" : "failed") + "")) set_data_dev(t9, t9_value);
 
-    			if (dirty & /*isOK*/ 4 && span2_class_value !== (span2_class_value = "" + (null_to_empty(/*isOK*/ ctx[2] ? "on" : "off") + " svelte-20gv77"))) {
+    			if (dirty & /*isOK*/ 4 && span2_class_value !== (span2_class_value = "" + (null_to_empty(/*isOK*/ ctx[2] ? "on" : "off") + " svelte-1uhglgl"))) {
     				attr_dev(span2, "class", span2_class_value);
     			}
 
     			if (dirty & /*isOn*/ 8 && t12_value !== (t12_value = (/*isOn*/ ctx[3] ? "on" : "off") + "")) set_data_dev(t12, t12_value);
 
-    			if (dirty & /*isOn*/ 8 && span3_class_value !== (span3_class_value = "" + (null_to_empty(/*isOn*/ ctx[3] ? "on" : "off") + " svelte-20gv77"))) {
+    			if (dirty & /*isOn*/ 8 && span3_class_value !== (span3_class_value = "" + (null_to_empty(/*isOn*/ ctx[3] ? "on" : "off") + " svelte-1uhglgl"))) {
     				attr_dev(span3, "class", span3_class_value);
     			}
     		},
@@ -1188,13 +1188,13 @@ var app = (function () {
     			t5 = space();
     			p3 = element("p");
     			p3.textContent = "delete user";
-    			attr_dev(p0, "class", "svelte-20gv77");
+    			attr_dev(p0, "class", "svelte-1uhglgl");
     			add_location(p0, file$4, 88, 4, 2032);
-    			attr_dev(p1, "class", "svelte-20gv77");
+    			attr_dev(p1, "class", "svelte-1uhglgl");
     			add_location(p1, file$4, 89, 4, 2052);
-    			attr_dev(p2, "class", "svelte-20gv77");
+    			attr_dev(p2, "class", "svelte-1uhglgl");
     			add_location(p2, file$4, 90, 4, 2111);
-    			attr_dev(p3, "class", "svelte-20gv77");
+    			attr_dev(p3, "class", "svelte-1uhglgl");
     			add_location(p3, file$4, 91, 4, 2134);
     		},
     		m: function mount(target, anchor) {
@@ -1391,18 +1391,18 @@ var app = (function () {
     			create_component(footer.$$.fragment);
     			attr_dev(h1, "class", "");
     			add_location(h1, file$4, 71, 2, 1366);
-    			attr_dev(header, "class", "svelte-20gv77");
+    			attr_dev(header, "class", "svelte-1uhglgl");
     			add_location(header, file$4, 70, 1, 1353);
-    			attr_dev(div, "class", "group svelte-20gv77");
+    			attr_dev(div, "class", "group svelte-1uhglgl");
     			add_location(div, file$4, 74, 2, 1416);
-    			attr_dev(section, "class", "svelte-20gv77");
+    			attr_dev(section, "class", "svelte-1uhglgl");
     			add_location(section, file$4, 73, 1, 1403);
 
     			set_style(main, "background-image", "url('./build/img/" + (/*root*/ ctx[1]
     			? /*sudoImg*/ ctx[8][/*rndRootImg*/ ctx[10]]
     			: /*images*/ ctx[7][/*rndImg*/ ctx[9]]) + "'");
 
-    			attr_dev(main, "class", "svelte-20gv77");
+    			attr_dev(main, "class", "svelte-1uhglgl");
     			add_location(main, file$4, 66, 0, 1220);
     		},
     		l: function claim(nodes) {
