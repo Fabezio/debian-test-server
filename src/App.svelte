@@ -5,12 +5,22 @@
 	import Footer from './Layouts/Footer.svelte'
 	import Card from './UI/Card.svelte'
 	import Modal from './UI/Modal.svelte'
-	export let name;
+	export let pagename;
 	let user = 'fabezio'
 	let root = true
 	let isOK = true
 	let isOn = true
 	let alerts
+
+	let username = ''
+	let job = ''
+	// let privileges = ''
+	let hobbies = ''
+	let value = ''
+	let quotation =''
+	$: if (value.length) quotation = value
+	// let username = ''
+
 	let images = [
 		'1920x1080.png',
 		'Abstract Shapes 2.jpg',
@@ -32,8 +42,8 @@
 		'debian10_2.jpg',
 		'debian10_3.jpg',
 		'bash_oblique.jpg'
-
 	]
+	let upSigned = false
 	let rndImg = Math.floor(Math.random() * images.length)
 	let rndRootImg = Math.floor(Math.random() * sudoImg.length)
 	let dispModal = true
@@ -61,68 +71,99 @@
 			}}
 
 	$: console.log($users)
-
+	$: if(!upSigned) console.log('You have to sign up to get minimum privileges.')
 
 </script>
 
-<svelte:head>{name}</svelte:head>
+<svelte:head>{pagename}</svelte:head>
 
 <main
- style="background-image: url('./img/{root? sudoImg[rndRootImg] : images[rndImg]}'" 
- >
-	<Navbar />
-	<header>  
-		<h1 class="">{name}</h1>
-	</header>
-	<section >
-		<div class="group">
-			<Card>
-				<p >user:  <span class="on">{user}{root ? ' (admin)' : ''}</span></p>
-				<p on:click={() => root = !root}>privileges:  <span class={ root ? "on" : "off"}>{root ? 'root' : 'normal'}</span></p>
-				{#if alerts }				 
-					<div class="alert" on:click={handleAlert}>{alerts}</div>
-				{/if}
-				<p on:click={() => isOK = !isOK}>test: <span class={ isOK ? "on" : "off"}>{isOK ? 'OK' : 'failed'}</span></p>
-				<p on:click={() => isOn = !isOn}>status: <span class={ isOn ? "on" : "off"}>{isOn? "on" : "off"}</span></p>
-				
-			</Card>
-		
-			{#if root}
-				<Card>
-					<p>add user</p>
-					<p on:click={() => dispModal = true}>see user info</p>
-					<p>update user</p>
-					<p>delete user</p>
-				</Card>
-			{/if}
-		</div>
-
-		{#if dispModal}
-			<Modal {dispModal}>
-				<div slot="content" id="content">
-					{#each $users as user}
-						 <!-- content here -->
-							<img src="./logos/{user.avatar}" />
-							<p>Name: {user.name}</p>	
-							<p>Group: {user.group}</p>	
-							<p>job: {user.job}</p>	
-							<p>hobbies:
-							{#each user.hobbies as hobby}
-								<br>- {hobby}
-							{/each}
-							</p>
-							<p>quotation: 
-							<q>{user.adage}</q>
-							</p>
-						 
-					{/each}
+	style="background-image: url('./img/{root? sudoImg[rndRootImg] : images[rndImg]}'" 
+	>
+	{#if !upSigned}
+			<!-- content here -->
+			<Modal>
+				<div class="userdata" slot='title'>
+					<p >
+					Fill the form below then click the Sign up button
+					</p>
 				</div>
-				<button slot ="footer" on:click={() => dispModal = false}>close</button>
-			</Modal>
-		{/if}	
-	</section>
+				<!-- <h4 slot="title">Sign up</h4> -->
+				<div slot='content'>
+					<form action="">
+						
+						<input bind:value={username} cols="30" placeholder="name:">
+						{username} <br>
+						<input bind:value={job} placeholder="job:">
+						{job} <br>
+						<input bind:value={hobbies} placeholder="hobbies:">
+						{hobbies} <br>
+						<textarea bind:value name="" id="" cols="30" rows="2" placeholder="quotation here"></textarea>
+						{quotation}
+					</form>
+				</div>
 
-	<Footer />	
+				<button slot='footer' on:click={() => upSigned = true}>Sign up</button>
+			</Modal>
+	{:else}
+		 <!-- else content here -->
+		<Navbar />
+		<header>  
+			<h1 class="">{pagename}</h1>
+		</header>
+		<section >
+			<div class="group">
+				<Card>
+					<p >user:  <span class="on">{user}{root ? ' (admin)' : ''}</span></p>
+					<p on:click={() => root = !root}>privileges:  <span class={ root ? "on" : "off"}>{root ? 'root' : 'normal'}</span></p>
+					{#if alerts }				 
+						<div class="alert" on:click={handleAlert}>{alerts}</div>
+					{/if}
+					<p on:click={() => isOK = !isOK}>test: <span class={ isOK ? "on" : "off"}>{isOK ? 'OK' : 'failed'}</span></p>
+					<p on:click={() => isOn = !isOn}>status: <span class={ isOn ? "on" : "off"}>{isOn? "on" : "off"}</span></p>
+					
+				</Card>
+			
+				{#if root}
+					<Card>
+						<p>add user</p>
+						<p on:click={() => dispModal = true}>see user info</p>
+						<p>update user</p>
+						<p>delete user</p>
+					</Card>
+				{/if}
+			</div>
+
+			{#if dispModal}
+				<Modal {dispModal}>
+					<div slot="content" id="userdata">
+						{#each $users as user}
+							<!-- content here -->
+								<img src="./logos/{user.avatar}" alt="" />
+								<p>Name: {user.name}</p>	
+								<p>Group: {user.group}</p>	
+								<p>Job: {user.job}</p>	
+								<p>Hobbies:
+								{#each user.hobbies as hobby}
+									<br>- {hobby}
+								{/each}
+								</p>
+								<p>Favorite sentence: 
+								<q>{user.adage}</q>
+								</p>
+							
+						{/each}
+					</div>
+					<div slot="footer">
+						<button on:click={() => dispModal = false}>close</button>
+						<!-- <button on:click={console.log('del')} >delete</button> -->
+					</div>
+				</Modal>
+			{/if}	
+		</section>
+
+		<Footer />	
+	{/if}
 </main>
 
 <style>	
@@ -146,15 +187,16 @@
 
 	p {
 		text-align: justify;
+		color: lightgray;
 	}
 	
 	section p {
 		font-weight: 300;
-			margin: 0.25rem 0.5rem;
-			padding: 0.2rem 0.5rem;
+		margin: 0.25rem 0.5rem;
+		padding: 0.2rem 0.5rem;
 
 	}
-	section p:hover {
+	section p:hover :not(#userdata *) {
 		cursor: pointer;
 		color: #ddd;
 	}
@@ -180,8 +222,12 @@
 		float:left;
 		cursor: pointer;
 	}
-	#content {
+	#userdata {
 		display: block;
+	}
+	.userdata  * {
+		color: black;
+
 	}
 
 	img {

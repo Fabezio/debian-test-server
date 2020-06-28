@@ -5,7 +5,8 @@
 <div class="backdrop"></div>
 <div class="window" >
   <header>
-    <h3>User info</h3> 
+    <slot name="title"><!-- optional fallback --></slot>
+    
   </header>
   <hr>
   <body>

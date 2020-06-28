@@ -3,7 +3,7 @@ import App from './App.svelte';
 const app = new App({
 	target: document.body,
 	props: {
-		name: "Page d'accueil test serveur (localhost)"
+		pagename: "Page d'accueil test serveur (localhost)"
 	}
 });
 
