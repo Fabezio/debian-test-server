@@ -43,10 +43,10 @@
 		'debian10_3.jpg',
 		'bash_oblique.jpg'
 	]
-	let upSigned = false
+	let upSigned = true
 	let rndImg = Math.floor(Math.random() * images.length)
 	let rndRootImg = Math.floor(Math.random() * sudoImg.length)
-	let dispModal = true
+	let dispModal = false
 
 	function checkStatus() {
 		// if (!root) {
@@ -136,7 +136,10 @@
 
 			{#if dispModal}
 				<Modal {dispModal}>
-					<div slot="content" id="userdata">
+					<div slot="title" class="userdata">
+						<h4>User Info</h4>
+					</div>
+					<div slot="content" class="userdata">
 						{#each $users as user}
 							<!-- content here -->
 								<img src="./logos/{user.avatar}" alt="" />
@@ -222,11 +225,12 @@
 		float:left;
 		cursor: pointer;
 	}
-	#userdata {
+	.userdata {
 		display: block;
 	}
 	.userdata  * {
 		color: black;
+		text-shadow: none;
 
 	}
 

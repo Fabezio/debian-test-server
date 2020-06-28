@@ -1,4 +1,4 @@
-<nav class="glass">
+<nav class="glass box-shadow" >
   <ul class="nav justify-content-center sticky-top mb-5 bg-light" id="top">
 		<li class="nav-item"><a class="nav-link active" href="#about">A propos</a></li>
 		<li class="nav-item"><a class="nav-link" href="#changes">Changements</a></li>

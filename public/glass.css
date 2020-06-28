@@ -1,12 +1,18 @@
 .glass {
-  background: rgba(0, 31, 63, 0.15);
+    background: rgba(0, 0, 0, 0.1);
 }
+
 .border {
-  border-radius: 10px;
-  border: 2px outset rgba(0, 31, 63, 0.05);
+    border-radius: 8px;
+    border: 2px inset rgba(0, 0, 0, 0.05);
 }
 
 .glass *:hover {
-  filter: brightness(110%);
-  /* text-decoration: underline .5px ; */
+    filter: brightness(110%);
+    /* text-decoration: underline .5px ; */
+}
+
+.box-shadow {
+    box-shadow: 1rem 1rem 1rem rgba(192, 192, 192, 0.033);
+    /* opacity: 0.1; */
 }

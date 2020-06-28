@@ -2,7 +2,7 @@
   // 
 </script>
   
-<footer class="glass">
+<footer class="glass ">
   <span>debian server</span>
   <span>&copy;</span>
   <span>{new Date().getFullYear()}</span>
