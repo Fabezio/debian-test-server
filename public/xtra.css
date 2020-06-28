@@ -1,0 +1,60 @@
+.glass {
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.border {
+	border-radius: 8px;
+	border: 2px inset rgba(0, 0, 0, 0.05);
+}
+
+.glass *:hover {
+	filter: brightness(110%);
+	/* text-decoration: underline .5px ; */
+}
+
+.box-shadow {
+    box-shadow: 1rem 1rem 1rem rgba(192, 192, 192, 0.033);
+    /* opacity: 0.1; */
+}
+
+.card {
+    max-width: 300px;
+    /* height: 7rem; */
+    padding: 0.25rem;
+    margin: 1rem;
+}
+.card p {
+	font-weight: 300;
+	margin: 0.25rem 0.5rem;
+	padding: 0.2rem 0.5rem;
+	color: lightgray;
+}
+
+.card p:hover {
+	cursor: pointer;
+	color: #ddd;
+}
+
+.card p:hover span {
+	color: #0ee;
+}
+.modal {
+	border-radius: 1rem;
+	display: block;
+	margin: auto;
+	background: whitesmoke;
+	color: black;
+	position: absolute;
+	left: 10%;
+	top: 20vh;
+
+	width: 80%;
+	min-height: 60vh;
+	text-align: center;
+
+}
+.modal .title {
+	text-transform: uppercase;
+	font-size: smaller;
+	
+}

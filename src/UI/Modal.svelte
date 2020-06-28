@@ -3,16 +3,16 @@
 </script>
 
 <div class="backdrop"></div>
-<div class="window" >
+<div class="modal" >
   <header>
-    <slot name="title"><!-- optional fallback --></slot>
-    
+    <slot name="title"/>
+      
   </header>
-  <hr>
+  
   <body>
     <slot name='content'></slot>
   </body>
-  <hr>
+  
   <footer>
     <slot name="footer" />
   </footer>
@@ -26,29 +26,27 @@
   width: 100%;
   height: 100vh;
 }
-.window {
-  border-radius: 1rem;
-  display: block;
-  margin: auto;
-  background: whitesmoke;
-  color: black;
-  position: absolute;
-  left: 10%;
-  top: 20vh;
-  margin: auto;
-  width: 80%;
-  min-height: 60vh;
-  text-align: center;
-  padding: 1rem;
-}
-hr {
+
+/* hr {
   opacity: 0.5;
+} */
+header {
+  /* height: 1.5rem; */
+  /* line-heig  ht: 1rem; */
+  background: grey;
+  border-radius : 10px 10px 0 0;
+  padding: 1px ;
 }
 body {
-  height: 40vh;
+  padding-top: 1rem;
+  height: 50vh;
+  border-top: 1px solid rgba(0,0,0,0.5);
+  /* border-bottom: 1px solid rgba(0,0,0,0.5); */
 }
 
 footer {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0,0,0,0.5);
   position: absolute;
   bottom: 0;
 
@@ -56,6 +54,7 @@ footer {
   display: block;
   width: 100%;
   height: 2rem;
+  border-radius : 0 0 10px 10px ;
 }
 
 

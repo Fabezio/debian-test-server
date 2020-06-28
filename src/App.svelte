@@ -1,12 +1,13 @@
 <script>
 	// import Glass from './UI/Glass.svelte'
 	import { users } from './DebianServer/users-store'
+	import { images, sudoImg } from './DebianServer/images-store'
 	import Navbar from './Layouts/Navbar.svelte'
 	import Footer from './Layouts/Footer.svelte'
 	import Card from './UI/Card.svelte'
 	import Modal from './UI/Modal.svelte'
 	export let pagename;
-	let user = 'fabezio'
+	let user = 'fab'
 	let root = true
 	let isOK = true
 	let isOn = true
@@ -21,32 +22,12 @@
 	$: if (value.length) quotation = value
 	// let username = ''
 
-	let images = [
-		'1920x1080.png',
-		'Abstract Shapes 2.jpg',
-		'Abstract Shapes.jpg',
-		'Chroma 1.jpg',
-		'Chroma 2.jpg',
-		'Flower 1.jpg',
-		'Flower 2.jpg',
-		'Flower 3.jpg',
-		'Flower 4.jpg',
-		'Mojave Day.jpg',
-		'Mojave Night.jpg'
-
-		// 'debian10_grey.jpg',
-	]
-	let sudoImg = [
-		'debian10.jpg',
-		// 'debian10.jpg',
-		'debian10_2.jpg',
-		'debian10_3.jpg',
-		'bash_oblique.jpg'
-	]
+	
 	let upSigned = true
-	let rndImg = Math.floor(Math.random() * images.length)
-	let rndRootImg = Math.floor(Math.random() * sudoImg.length)
+	let rndImg = Math.floor(Math.random() * $images.length)
+	let rndRootImg = Math.floor(Math.random() * $sudoImg.length)
 	let dispModal = false
+
 
 	function checkStatus() {
 		// if (!root) {
@@ -62,6 +43,10 @@
 	// $: console.log(images.length, rndImg)
 	// $: {if(root) adminUser 
 	// 		else user }
+	$: {if(!user.length) {
+		user = '---'
+		root = false
+	} } 
 	$: {if(!isOK) {
 				isOn = false 
 				alerts = '!'
@@ -78,15 +63,14 @@
 <svelte:head>{pagename}</svelte:head>
 
 <main
-	style="background-image: url('./img/{root? sudoImg[rndRootImg] : images[rndImg]}'" 
+	style="background-image: url('./img/{root? $sudoImg[rndRootImg] : $images[rndImg]}'" 
 	>
 	{#if !upSigned}
 			<!-- content here -->
 			<Modal>
-				<div class="userdata" slot='title'>
-					<p >
+				<div class="title" slot='title'>
 					Fill the form below then click the Sign up button
-					</p>
+					
 				</div>
 				<!-- <h4 slot="title">Sign up</h4> -->
 				<div slot='content'>
@@ -114,7 +98,7 @@
 		<section >
 			<div class="group">
 				<Card>
-					<p >user:  <span class="on">{user}{root ? ' (admin)' : ''}</span></p>
+					<p >user:  <span class={user !== '---' ? 'on' : 'off'}>{user}{root ? ' (admin)' : ''}</span></p>
 					<p on:click={() => root = !root}>privileges:  <span class={ root ? "on" : "off"}>{root ? 'root' : 'normal'}</span></p>
 					{#if alerts }				 
 						<div class="alert" on:click={handleAlert}>{alerts}</div>
@@ -136,8 +120,8 @@
 
 			{#if dispModal}
 				<Modal {dispModal}>
-					<div slot="title" class="userdata">
-						<h4>User Info</h4>
+					<div slot="title" class="title">
+						User Info
 					</div>
 					<div slot="content" class="userdata">
 						{#each $users as user}
@@ -190,23 +174,9 @@
 
 	p {
 		text-align: justify;
-		color: lightgray;
+		/* color: lightgray; */
 	}
 	
-	section p {
-		font-weight: 300;
-		margin: 0.25rem 0.5rem;
-		padding: 0.2rem 0.5rem;
-
-	}
-	section p:hover :not(#userdata *) {
-		cursor: pointer;
-		color: #ddd;
-	}
-	section p:hover span {
-		color: #0ee;
-	}
-
 	.on {
 		color: #0dd;
 	}
@@ -225,14 +195,7 @@
 		float:left;
 		cursor: pointer;
 	}
-	.userdata {
-		display: block;
-	}
-	.userdata  * {
-		color: black;
-		text-shadow: none;
-
-	}
+	
 
 	img {
 		width: 200px;
@@ -241,5 +204,10 @@
 	button {
 		position: absolute;
 		right: 2rem;
+	}
+	.title {
+		color: whitesmoke;
+		text-shadow: 0 0 3px black;
+		font-weight: 600;
 	}
 </style>
