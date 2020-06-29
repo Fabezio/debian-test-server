@@ -33,11 +33,15 @@
 header {
   /* height: 1.5rem; */
   /* line-heig  ht: 1rem; */
-  background: grey;
+  background: #666;
   border-radius : 10px 10px 0 0;
-  padding: 1px ;
+  padding: 3px ;
+}
+header * {
+  /* text-shadow: 1px 1px black; */
 }
 body {
+  /* display: inline-block; */
   padding-top: 1rem;
   height: 50vh;
   border-top: 1px solid rgba(0,0,0,0.5);
@@ -46,7 +50,7 @@ body {
 
 footer {
   padding-top: 1rem;
-  border-top: 1px solid rgba(0,0,0,0.5);
+  /* border-top: 1px solid rgba(0,0,0,0.5); */
   position: absolute;
   bottom: 0;
 

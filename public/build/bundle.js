@@ -878,13 +878,13 @@ var app = (function () {
     			t2 = space();
     			footer = element("footer");
     			if (footer_slot) footer_slot.c();
-    			attr_dev(div0, "class", "backdrop svelte-1ox3pxv");
+    			attr_dev(div0, "class", "backdrop svelte-1ffx416");
     			add_location(div0, file$3, 4, 0, 46);
-    			attr_dev(header, "class", "svelte-1ox3pxv");
+    			attr_dev(header, "class", "svelte-1ffx416");
     			add_location(header, file$3, 6, 2, 98);
-    			attr_dev(body, "class", "svelte-1ox3pxv");
+    			attr_dev(body, "class", "svelte-1ffx416");
     			add_location(body, file$3, 11, 2, 156);
-    			attr_dev(footer, "class", "svelte-1ox3pxv");
+    			attr_dev(footer, "class", "svelte-1ffx416");
     			add_location(footer, file$3, 15, 2, 211);
     			attr_dev(div1, "class", "modal");
     			add_location(div1, file$3, 5, 0, 75);
@@ -1067,12 +1067,12 @@ var app = (function () {
     			t5 = space();
     			create_component(footer.$$.fragment);
     			attr_dev(h1, "class", "");
-    			add_location(h1, file$4, 95, 3, 2207);
-    			attr_dev(header, "class", "svelte-15cg7qk");
-    			add_location(header, file$4, 94, 2, 2193);
-    			attr_dev(div, "class", "group svelte-15cg7qk");
-    			add_location(div, file$4, 98, 3, 2264);
-    			add_location(section, file$4, 97, 2, 2250);
+    			add_location(h1, file$4, 95, 3, 2208);
+    			attr_dev(header, "class", "svelte-13g73zy");
+    			add_location(header, file$4, 94, 2, 2194);
+    			attr_dev(div, "class", "group svelte-13g73zy");
+    			add_location(div, file$4, 98, 3, 2265);
+    			add_location(section, file$4, 97, 2, 2251);
     		},
     		m: function mount(target, anchor) {
     			mount_component(navbar, target, anchor);
@@ -1261,8 +1261,8 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			t = text(/*alerts*/ ctx[4]);
-    			attr_dev(div, "class", "alert svelte-15cg7qk");
-    			add_location(div, file$4, 103, 6, 2551);
+    			attr_dev(div, "class", "alert svelte-13g73zy");
+    			add_location(div, file$4, 103, 6, 2552);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1353,22 +1353,22 @@ var app = (function () {
     			t11 = text("status: ");
     			span3 = element("span");
     			t12 = text(t12_value);
-    			attr_dev(span0, "class", span0_class_value = "" + (null_to_empty(/*user*/ ctx[15] !== "---" ? "on" : "off") + " svelte-15cg7qk"));
-    			add_location(span0, file$4, 100, 16, 2311);
-    			attr_dev(p0, "class", "svelte-15cg7qk");
-    			add_location(p0, file$4, 100, 5, 2300);
-    			attr_dev(span1, "class", span1_class_value = "" + (null_to_empty(/*root*/ ctx[1] ? "on" : "off") + " svelte-15cg7qk"));
-    			add_location(span1, file$4, 101, 51, 2448);
-    			attr_dev(p1, "class", "svelte-15cg7qk");
-    			add_location(p1, file$4, 101, 5, 2402);
-    			attr_dev(span2, "class", span2_class_value = "" + (null_to_empty(/*isOK*/ ctx[2] ? "on" : "off") + " svelte-15cg7qk"));
-    			add_location(span2, file$4, 105, 44, 2663);
-    			attr_dev(p2, "class", "svelte-15cg7qk");
-    			add_location(p2, file$4, 105, 5, 2624);
-    			attr_dev(span3, "class", span3_class_value = "" + (null_to_empty(/*isOn*/ ctx[3] ? "on" : "off") + " svelte-15cg7qk"));
-    			add_location(span3, file$4, 106, 46, 2780);
-    			attr_dev(p3, "class", "svelte-15cg7qk");
-    			add_location(p3, file$4, 106, 5, 2739);
+    			attr_dev(span0, "class", span0_class_value = "" + (null_to_empty(/*user*/ ctx[15] !== "---" ? "on" : "off") + " svelte-13g73zy"));
+    			add_location(span0, file$4, 100, 16, 2312);
+    			attr_dev(p0, "class", "svelte-13g73zy");
+    			add_location(p0, file$4, 100, 5, 2301);
+    			attr_dev(span1, "class", span1_class_value = "" + (null_to_empty(/*root*/ ctx[1] ? "on" : "off") + " svelte-13g73zy"));
+    			add_location(span1, file$4, 101, 51, 2449);
+    			attr_dev(p1, "class", "svelte-13g73zy");
+    			add_location(p1, file$4, 101, 5, 2403);
+    			attr_dev(span2, "class", span2_class_value = "" + (null_to_empty(/*isOK*/ ctx[2] ? "on" : "off") + " svelte-13g73zy"));
+    			add_location(span2, file$4, 105, 44, 2664);
+    			attr_dev(p2, "class", "svelte-13g73zy");
+    			add_location(p2, file$4, 105, 5, 2625);
+    			attr_dev(span3, "class", span3_class_value = "" + (null_to_empty(/*isOn*/ ctx[3] ? "on" : "off") + " svelte-13g73zy"));
+    			add_location(span3, file$4, 106, 46, 2781);
+    			attr_dev(p3, "class", "svelte-13g73zy");
+    			add_location(p3, file$4, 106, 5, 2740);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p0, anchor);
@@ -1408,13 +1408,13 @@ var app = (function () {
     			if (dirty[0] & /*user*/ 32768) set_data_dev(t1, /*user*/ ctx[15]);
     			if (dirty[0] & /*root*/ 2 && t2_value !== (t2_value = (/*root*/ ctx[1] ? " (admin)" : "") + "")) set_data_dev(t2, t2_value);
 
-    			if (dirty[0] & /*user*/ 32768 && span0_class_value !== (span0_class_value = "" + (null_to_empty(/*user*/ ctx[15] !== "---" ? "on" : "off") + " svelte-15cg7qk"))) {
+    			if (dirty[0] & /*user*/ 32768 && span0_class_value !== (span0_class_value = "" + (null_to_empty(/*user*/ ctx[15] !== "---" ? "on" : "off") + " svelte-13g73zy"))) {
     				attr_dev(span0, "class", span0_class_value);
     			}
 
     			if (dirty[0] & /*root*/ 2 && t5_value !== (t5_value = (/*root*/ ctx[1] ? "root" : "normal") + "")) set_data_dev(t5, t5_value);
 
-    			if (dirty[0] & /*root*/ 2 && span1_class_value !== (span1_class_value = "" + (null_to_empty(/*root*/ ctx[1] ? "on" : "off") + " svelte-15cg7qk"))) {
+    			if (dirty[0] & /*root*/ 2 && span1_class_value !== (span1_class_value = "" + (null_to_empty(/*root*/ ctx[1] ? "on" : "off") + " svelte-13g73zy"))) {
     				attr_dev(span1, "class", span1_class_value);
     			}
 
@@ -1433,13 +1433,13 @@ var app = (function () {
 
     			if (dirty[0] & /*isOK*/ 4 && t9_value !== (t9_value = (/*isOK*/ ctx[2] ? "OK" : "failed") + "")) set_data_dev(t9, t9_value);
 
-    			if (dirty[0] & /*isOK*/ 4 && span2_class_value !== (span2_class_value = "" + (null_to_empty(/*isOK*/ ctx[2] ? "on" : "off") + " svelte-15cg7qk"))) {
+    			if (dirty[0] & /*isOK*/ 4 && span2_class_value !== (span2_class_value = "" + (null_to_empty(/*isOK*/ ctx[2] ? "on" : "off") + " svelte-13g73zy"))) {
     				attr_dev(span2, "class", span2_class_value);
     			}
 
     			if (dirty[0] & /*isOn*/ 8 && t12_value !== (t12_value = (/*isOn*/ ctx[3] ? "on" : "off") + "")) set_data_dev(t12, t12_value);
 
-    			if (dirty[0] & /*isOn*/ 8 && span3_class_value !== (span3_class_value = "" + (null_to_empty(/*isOn*/ ctx[3] ? "on" : "off") + " svelte-15cg7qk"))) {
+    			if (dirty[0] & /*isOn*/ 8 && span3_class_value !== (span3_class_value = "" + (null_to_empty(/*isOn*/ ctx[3] ? "on" : "off") + " svelte-13g73zy"))) {
     				attr_dev(span3, "class", span3_class_value);
     			}
     		},
@@ -1549,14 +1549,14 @@ var app = (function () {
     			t5 = space();
     			p3 = element("p");
     			p3.textContent = "delete user";
-    			attr_dev(p0, "class", "svelte-15cg7qk");
-    			add_location(p0, file$4, 112, 6, 2902);
-    			attr_dev(p1, "class", "svelte-15cg7qk");
-    			add_location(p1, file$4, 113, 6, 2924);
-    			attr_dev(p2, "class", "svelte-15cg7qk");
-    			add_location(p2, file$4, 114, 6, 2985);
-    			attr_dev(p3, "class", "svelte-15cg7qk");
-    			add_location(p3, file$4, 115, 6, 3010);
+    			attr_dev(p0, "class", "svelte-13g73zy");
+    			add_location(p0, file$4, 112, 6, 2903);
+    			attr_dev(p1, "class", "svelte-13g73zy");
+    			add_location(p1, file$4, 113, 6, 2925);
+    			attr_dev(p2, "class", "svelte-13g73zy");
+    			add_location(p2, file$4, 114, 6, 2986);
+    			attr_dev(p3, "class", "svelte-13g73zy");
+    			add_location(p3, file$4, 115, 6, 3011);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p0, anchor);
@@ -1668,8 +1668,8 @@ var app = (function () {
     			div = element("div");
     			div.textContent = "User Info";
     			attr_dev(div, "slot", "title");
-    			attr_dev(div, "class", "title svelte-15cg7qk");
-    			add_location(div, file$4, 122, 5, 3111);
+    			attr_dev(div, "class", "title svelte-13g73zy");
+    			add_location(div, file$4, 122, 5, 3112);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1690,7 +1690,7 @@ var app = (function () {
     	return block;
     }
 
-    // (134:8) {#each user.hobbies as hobby}
+    // (137:9) {#each user.hobbies as hobby}
     function create_each_block_1(ctx) {
     	let br;
     	let t0;
@@ -1702,7 +1702,7 @@ var app = (function () {
     			br = element("br");
     			t0 = text("- ");
     			t1 = text(t1_value);
-    			add_location(br, file$4, 134, 9, 3493);
+    			add_location(br, file$4, 137, 10, 3565);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, br, anchor);
@@ -1723,7 +1723,7 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(134:8) {#each user.hobbies as hobby}",
+    		source: "(137:9) {#each user.hobbies as hobby}",
     		ctx
     	});
 
@@ -1732,9 +1732,11 @@ var app = (function () {
 
     // (127:6) {#each $users as user}
     function create_each_block(ctx) {
+    	let div0;
     	let img;
     	let img_src_value;
     	let t0;
+    	let div1;
     	let p0;
     	let t1;
     	let t2_value = /*user*/ ctx[15].name + "";
@@ -1769,8 +1771,10 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
+    			div0 = element("div");
     			img = element("img");
     			t0 = space();
+    			div1 = element("div");
     			p0 = element("p");
     			t1 = text("Name: ");
     			t2 = text(t2_value);
@@ -1784,7 +1788,7 @@ var app = (function () {
     			t8 = text(t8_value);
     			t9 = space();
     			p3 = element("p");
-    			t10 = text("Hobbies:\n\t\t\t\t\t\t\t\t");
+    			t10 = text("Hobbies:\n\t\t\t\t\t\t\t\t\t");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
@@ -1792,54 +1796,60 @@ var app = (function () {
 
     			t11 = space();
     			p4 = element("p");
-    			t12 = text("Favorite sentence: \n\t\t\t\t\t\t\t\t");
+    			t12 = text("Favorite sentence: \n\t\t\t\t\t\t\t\t\t");
     			q = element("q");
     			t13 = text(t13_value);
     			t14 = space();
     			if (img.src !== (img_src_value = "./logos/" + /*user*/ ctx[15].avatar)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "");
-    			attr_dev(img, "class", "svelte-15cg7qk");
-    			add_location(img, file$4, 128, 8, 3281);
-    			attr_dev(p0, "class", "svelte-15cg7qk");
-    			add_location(p0, file$4, 129, 8, 3332);
-    			attr_dev(p1, "class", "svelte-15cg7qk");
-    			add_location(p1, file$4, 130, 8, 3366);
-    			attr_dev(p2, "class", "svelte-15cg7qk");
-    			add_location(p2, file$4, 131, 8, 3402);
-    			attr_dev(p3, "class", "svelte-15cg7qk");
-    			add_location(p3, file$4, 132, 8, 3434);
-    			add_location(q, file$4, 138, 8, 3575);
-    			attr_dev(p4, "class", "svelte-15cg7qk");
-    			add_location(p4, file$4, 137, 8, 3544);
+    			attr_dev(img, "class", "svelte-13g73zy");
+    			add_location(img, file$4, 129, 9, 3305);
+    			attr_dev(div0, "class", "img svelte-13g73zy");
+    			add_location(div0, file$4, 128, 8, 3278);
+    			attr_dev(p0, "class", "svelte-13g73zy");
+    			add_location(p0, file$4, 132, 9, 3399);
+    			attr_dev(p1, "class", "svelte-13g73zy");
+    			add_location(p1, file$4, 133, 9, 3434);
+    			attr_dev(p2, "class", "svelte-13g73zy");
+    			add_location(p2, file$4, 134, 9, 3471);
+    			attr_dev(p3, "class", "svelte-13g73zy");
+    			add_location(p3, file$4, 135, 9, 3504);
+    			add_location(q, file$4, 141, 9, 3651);
+    			attr_dev(p4, "class", "svelte-13g73zy");
+    			add_location(p4, file$4, 140, 9, 3619);
+    			attr_dev(div1, "class", "list svelte-13g73zy");
+    			add_location(div1, file$4, 131, 8, 3371);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, img, anchor);
+    			insert_dev(target, div0, anchor);
+    			append_dev(div0, img);
     			insert_dev(target, t0, anchor);
-    			insert_dev(target, p0, anchor);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, p0);
     			append_dev(p0, t1);
     			append_dev(p0, t2);
-    			insert_dev(target, t3, anchor);
-    			insert_dev(target, p1, anchor);
+    			append_dev(div1, t3);
+    			append_dev(div1, p1);
     			append_dev(p1, t4);
     			append_dev(p1, t5);
-    			insert_dev(target, t6, anchor);
-    			insert_dev(target, p2, anchor);
+    			append_dev(div1, t6);
+    			append_dev(div1, p2);
     			append_dev(p2, t7);
     			append_dev(p2, t8);
-    			insert_dev(target, t9, anchor);
-    			insert_dev(target, p3, anchor);
+    			append_dev(div1, t9);
+    			append_dev(div1, p3);
     			append_dev(p3, t10);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(p3, null);
     			}
 
-    			insert_dev(target, t11, anchor);
-    			insert_dev(target, p4, anchor);
+    			append_dev(div1, t11);
+    			append_dev(div1, p4);
     			append_dev(p4, t12);
     			append_dev(p4, q);
     			append_dev(q, t13);
-    			append_dev(p4, t14);
+    			append_dev(div1, t14);
     		},
     		p: function update(ctx, dirty) {
     			if (dirty[0] & /*$users*/ 16384 && img.src !== (img_src_value = "./logos/" + /*user*/ ctx[15].avatar)) {
@@ -1877,18 +1887,10 @@ var app = (function () {
     			if (dirty[0] & /*$users*/ 16384 && t13_value !== (t13_value = /*user*/ ctx[15].adage + "")) set_data_dev(t13, t13_value);
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(img);
+    			if (detaching) detach_dev(div0);
     			if (detaching) detach_dev(t0);
-    			if (detaching) detach_dev(p0);
-    			if (detaching) detach_dev(t3);
-    			if (detaching) detach_dev(p1);
-    			if (detaching) detach_dev(t6);
-    			if (detaching) detach_dev(p2);
-    			if (detaching) detach_dev(t9);
-    			if (detaching) detach_dev(p3);
+    			if (detaching) detach_dev(div1);
     			destroy_each(each_blocks, detaching);
-    			if (detaching) detach_dev(t11);
-    			if (detaching) detach_dev(p4);
     		}
     	};
 
@@ -1903,7 +1905,7 @@ var app = (function () {
     	return block;
     }
 
-    // (126:5) <div slot="content" class="userdata">
+    // (126:5) <div slot="content" class="data">
     function create_content_slot_1(ctx) {
     	let div;
     	let each_value = /*$users*/ ctx[14];
@@ -1923,8 +1925,8 @@ var app = (function () {
     			}
 
     			attr_dev(div, "slot", "content");
-    			attr_dev(div, "class", "userdata");
-    			add_location(div, file$4, 125, 5, 3177);
+    			attr_dev(div, "class", "data");
+    			add_location(div, file$4, 125, 5, 3178);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1968,14 +1970,14 @@ var app = (function () {
     		block,
     		id: create_content_slot_1.name,
     		type: "slot",
-    		source: "(126:5) <div slot=\\\"content\\\" class=\\\"userdata\\\">",
+    		source: "(126:5) <div slot=\\\"content\\\" class=\\\"data\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (144:5) <div slot="footer">
+    // (148:5) <div slot="footer">
     function create_footer_slot_1(ctx) {
     	let div;
     	let button;
@@ -1987,10 +1989,10 @@ var app = (function () {
     			div = element("div");
     			button = element("button");
     			button.textContent = "close";
-    			attr_dev(button, "class", "svelte-15cg7qk");
-    			add_location(button, file$4, 144, 6, 3673);
+    			attr_dev(button, "class", "svelte-13g73zy");
+    			add_location(button, file$4, 148, 6, 3765);
     			attr_dev(div, "slot", "footer");
-    			add_location(div, file$4, 143, 5, 3647);
+    			add_location(div, file$4, 147, 5, 3739);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -2013,7 +2015,7 @@ var app = (function () {
     		block,
     		id: create_footer_slot_1.name,
     		type: "slot",
-    		source: "(144:5) <div slot=\\\"footer\\\">",
+    		source: "(148:5) <div slot=\\\"footer\\\">",
     		ctx
     	});
 
@@ -2060,9 +2062,9 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			div.textContent = "Fill the form below then click the Sign up button";
-    			attr_dev(div, "class", "title svelte-15cg7qk");
+    			attr_dev(div, "class", "title svelte-13g73zy");
     			attr_dev(div, "slot", "title");
-    			add_location(div, file$4, 70, 4, 1471);
+    			add_location(div, file$4, 70, 4, 1472);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -2138,24 +2140,24 @@ var app = (function () {
     			t13 = text(/*quotation*/ ctx[9]);
     			attr_dev(input0, "cols", "30");
     			attr_dev(input0, "placeholder", "name:");
-    			add_location(input0, file$4, 78, 6, 1679);
-    			add_location(br0, file$4, 79, 17, 1756);
+    			add_location(input0, file$4, 78, 6, 1680);
+    			add_location(br0, file$4, 79, 17, 1757);
     			attr_dev(input1, "placeholder", "job:");
-    			add_location(input1, file$4, 80, 6, 1767);
-    			add_location(br1, file$4, 81, 12, 1823);
+    			add_location(input1, file$4, 80, 6, 1768);
+    			add_location(br1, file$4, 81, 12, 1824);
     			attr_dev(input2, "placeholder", "hobbies:");
-    			add_location(input2, file$4, 82, 6, 1834);
-    			add_location(br2, file$4, 83, 16, 1902);
+    			add_location(input2, file$4, 82, 6, 1835);
+    			add_location(br2, file$4, 83, 16, 1903);
     			attr_dev(textarea, "name", "");
     			attr_dev(textarea, "id", "");
     			attr_dev(textarea, "cols", "30");
     			attr_dev(textarea, "rows", "2");
     			attr_dev(textarea, "placeholder", "quotation here");
-    			add_location(textarea, file$4, 84, 6, 1913);
+    			add_location(textarea, file$4, 84, 6, 1914);
     			attr_dev(form, "action", "");
-    			add_location(form, file$4, 76, 5, 1649);
+    			add_location(form, file$4, 76, 5, 1650);
     			attr_dev(div, "slot", "content");
-    			add_location(div, file$4, 75, 4, 1623);
+    			add_location(div, file$4, 75, 4, 1624);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -2251,8 +2253,8 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Sign up";
     			attr_dev(button, "slot", "footer");
-    			attr_dev(button, "class", "svelte-15cg7qk");
-    			add_location(button, file$4, 89, 4, 2055);
+    			attr_dev(button, "class", "svelte-13g73zy");
+    			add_location(button, file$4, 89, 4, 2056);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -2342,8 +2344,8 @@ var app = (function () {
     			? /*$sudoImg*/ ctx[13][/*rndRootImg*/ ctx[17]]
     			: /*$images*/ ctx[12][/*rndImg*/ ctx[16]]) + "'");
 
-    			attr_dev(main, "class", "svelte-15cg7qk");
-    			add_location(main, file$4, 64, 0, 1318);
+    			attr_dev(main, "class", "svelte-13g73zy");
+    			add_location(main, file$4, 64, 0, 1319);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2431,7 +2433,7 @@ var app = (function () {
     	validate_store(users, "users");
     	component_subscribe($$self, users, $$value => $$invalidate(14, $users = $$value));
     	let { pagename } = $$props;
-    	let user = "fab";
+    	let user = "sudo";
     	let root = true;
     	let isOK = true;
     	let isOn = true;

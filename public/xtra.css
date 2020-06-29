@@ -1,10 +1,11 @@
 .glass {
-	background: rgba(0, 0, 0, 0.1);
+	background: linear-gradient(0.333turn, rgba(63, 0, 63, 0.051), rgba(0, 63 ,63, 0.1));
+	/* background: rgba(0, 0, 0, 0.1); */
 }
 
 .border {
-	border-radius: 8px;
-	border: 2px inset rgba(0, 0, 0, 0.05);
+	border-radius: 12px;
+	border: thin ridge rgba(0, 63, 0, 0.25), medium outset rgba(0, 0, 63, 0.5);
 }
 
 .glass *:hover {
@@ -45,10 +46,10 @@
 	background: whitesmoke;
 	color: black;
 	position: absolute;
-	left: 10%;
+	left: 25%;
 	top: 20vh;
-
-	width: 80%;
+	border: 1px solid #444;
+	width: 50%;
 	min-height: 60vh;
 	text-align: center;
 
@@ -58,3 +59,4 @@
 	font-size: smaller;
 	
 }
+/* .group . */

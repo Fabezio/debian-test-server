@@ -7,7 +7,7 @@
 	import Card from './UI/Card.svelte'
 	import Modal from './UI/Modal.svelte'
 	export let pagename;
-	let user = 'fab'
+	let user = 'sudo'
 	let root = true
 	let isOK = true
 	let isOn = true
@@ -123,21 +123,25 @@
 					<div slot="title" class="title">
 						User Info
 					</div>
-					<div slot="content" class="userdata">
+					<div slot="content" class="data">
 						{#each $users as user}
 							<!-- content here -->
-								<img src="./logos/{user.avatar}" alt="" />
-								<p>Name: {user.name}</p>	
-								<p>Group: {user.group}</p>	
-								<p>Job: {user.job}</p>	
-								<p>Hobbies:
-								{#each user.hobbies as hobby}
-									<br>- {hobby}
-								{/each}
-								</p>
-								<p>Favorite sentence: 
-								<q>{user.adage}</q>
-								</p>
+								<div class="img">
+									<img src="./logos/{user.avatar}" alt="" />
+								</div>
+								<div class="list">
+									<p>Name: {user.name}</p>	
+									<p>Group: {user.group}</p>	
+									<p>Job: {user.job}</p>	
+									<p>Hobbies:
+									{#each user.hobbies as hobby}
+										<br>- {hobby}
+									{/each}
+									</p>
+									<p>Favorite sentence: 
+									<q>{user.adage}</q>
+									</p>
+								</div>
 							
 						{/each}
 					</div>
@@ -201,13 +205,16 @@
 		width: 200px;
 		float:left;
 	}
+	.img, .list {
+		padding-left: 0 4rem;
+	}
 	button {
 		position: absolute;
 		right: 2rem;
 	}
 	.title {
 		color: whitesmoke;
-		text-shadow: 0 0 3px black;
-		font-weight: 600;
+		text-shadow: 0px 0px 1px black;
+		font-weight: 500;
 	}
 </style>
